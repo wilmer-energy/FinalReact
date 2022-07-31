@@ -3,12 +3,15 @@ import { useSelector } from 'react-redux/es/exports';
 import { useDispatch } from 'react-redux/es/hooks/useDispatch';
 import { getProductsThunk, update } from '../store/slices/products.slice';
 import { useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 
 const Home = () => {
 
 
     const dispatch = useDispatch()
-    const navigate=useNavigate()
+    const navigate = useNavigate()
+    const { register, handleSubmit } = useForm()
+    const categories=["Smart TV","Computers","Smartphones","Kitchen"]
 
     useEffect(() => {
         dispatch(getProductsThunk(dispatch))
@@ -16,37 +19,91 @@ const Home = () => {
 
     const products = useSelector(state => state.productsSlice)
     const [searchText, setSearchText] = useState("")
-    const [productsFilter,setProductsFilter]=useState([])
+    const [productsFilter, setProductsFilter] = useState([])
 
-    
     useEffect(() => {
         setProductsFilter(products)
     }, [products])
 
-    
-    const submit = (e) => {
-        dispatch(getProductsThunk(dispatch))
-    }
+
+    //------------------FILTERS------------
+
 
     const filter = (e) => {
         setSearchText(e)
-        let p=products.filter((elem)=>{
-            return elem.title.toLowerCase().indexOf(e.toLowerCase())!==-1
+        let p = products.filter((elem) => {
+            return elem.title.toLowerCase().indexOf(e.toLowerCase()) !== -1
         })
-        setProductsFilter(p) 
+        setProductsFilter(p)
     }
-    const showDetails=(index)=>{
-        navigate(`/product/${index}`)
+
+    const filterByPrice = (data) => {
+        
+        let filtered= products.filter(e => {
+            let price = parseInt(e.price)
+            let to = parseInt(data.to)
+            let from = parseInt(data.from)
+            let final = price >= from && price <= to
+            return final
+        })
+        setProductsFilter(filtered)
     }
     
+    const filterByCategory=(index)=>{
+        
+        let filtered=products.filter((e)=>{
+            return e.category.name===categories[index]
+        })
+        setProductsFilter(filtered)  
+
+    }
+
+
+    // ------------------NAVIGATES---------------
+
+
+
+    const showDetails = (index) => {
+        navigate(`/product/${index}`)
+    }
+    const showLogIn =()=>{
+        navigate("/LogIn")
+    }
+    const showPurchases=()=>{
+        navigate("/purchases")
+    }
+
+
+
+
     return (
         <div className='home'>
             <header>e-commerce</header>
 
+            <ul>
+                <li><button>e-commerce</button></li>
+                <li><button onClick={showLogIn}>Log in</button></li>
+                <li><button onClick={showPurchases}>Purchases</button></li>
+                <li><button>Cart</button></li>
+            </ul>
+
             <div>Price</div>
-            <div>Filter by price</div>
-            <div>Category</div>
-            <div>List of categories</div>
+            <form onSubmit={handleSubmit(filterByPrice)}>
+                <label htmlFor="priceFrom"></label>
+                <input type="number" id='priceFrom' {...register("from")} />
+                <label htmlFor="priceTo"></label>
+                <input type="number" id='priceTo' {...register("to")} />
+                <button>Filter</button>
+
+            </form>
+            <div>Category
+                <ul>
+                    {categories?.map((e)=>{
+                        return <li key={e} onClick={()=>{filterByCategory(categories.indexOf(e))}}>{e}</li>
+                    })}
+                </ul>
+            </div>
+            
 
 
             <form>
@@ -56,8 +113,8 @@ const Home = () => {
             </form>
 
             <div>Productos
-                {productsFilter.map((e) => {
-                    return (<div className='productCard' key={e.title} onClick={()=>{showDetails(e.id)}}>
+                {productsFilter?.map((e) => {
+                    return (<div className='productCard' key={e.title} onClick={() => { showDetails(e.id) }}>
                         <img src={e.productImgs?.[0]} alt="" />
                         <span>{e.title}</span>
                         <div>
