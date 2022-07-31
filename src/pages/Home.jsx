@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux/es/exports';
 import { useDispatch } from 'react-redux/es/hooks/useDispatch';
 import { getProductsThunk, update } from '../store/slices/products.slice';
 import { useNavigate } from 'react-router-dom';
+import Header from '../Components/Header';
 
 const Home = () => {
 
@@ -41,8 +42,8 @@ const Home = () => {
     
     return (
         <div className='home'>
-            <header>e-commerce</header>
-
+            {/* <header>e-commerce</header> */}
+<Header />
             <div>Price</div>
             <div>Filter by price</div>
             <div>Category</div>
