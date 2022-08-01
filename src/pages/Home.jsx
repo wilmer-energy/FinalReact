@@ -9,7 +9,7 @@ const Home = () => {
 
 
     const dispatch = useDispatch()
-    const navigate=useNavigate()
+    const navigate = useNavigate()
 
     useEffect(() => {
         dispatch(getProductsThunk(dispatch))
@@ -17,33 +17,33 @@ const Home = () => {
 
     const products = useSelector(state => state.productsSlice)
     const [searchText, setSearchText] = useState("")
-    const [productsFilter,setProductsFilter]=useState([])
+    const [productsFilter, setProductsFilter] = useState([])
 
-    
+
     useEffect(() => {
         setProductsFilter(products)
     }, [products])
 
-    
+
     const submit = (e) => {
         dispatch(getProductsThunk(dispatch))
     }
 
     const filter = (e) => {
         setSearchText(e)
-        let p=products.filter((elem)=>{
-            return elem.title.toLowerCase().indexOf(e.toLowerCase())!==-1
+        let p = products.filter((elem) => {
+            return elem.title.toLowerCase().indexOf(e.toLowerCase()) !== -1
         })
-        setProductsFilter(p) 
+        setProductsFilter(p)
     }
-    const showDetails=(index)=>{
+    const showDetails = (index) => {
         navigate(`/product/${index}`)
     }
-    
+
     return (
         <div className='home'>
             {/* <header>e-commerce</header> */}
-<Header />
+            <Header />
             <div>Price</div>
             <div>Filter by price</div>
             <div>Category</div>
@@ -58,7 +58,7 @@ const Home = () => {
 
             <div>Productos
                 {productsFilter.map((e) => {
-                    return (<div className='productCard' key={e.title} onClick={()=>{showDetails(e.id)}}>
+                    return (<div className='productCard' key={e.title} onClick={() => { showDetails(e.id) }}>
                         <img src={e.productImgs?.[0]} alt="" />
                         <span>{e.title}</span>
                         <div>

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import logo from './logo.svg'
-import './App.css'
+import './styles/home.css'
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import {Home,LogIn,ProductDetails, Purchases} from './pages/index'
 
