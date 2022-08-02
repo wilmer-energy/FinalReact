@@ -16,9 +16,12 @@ const ProductDetails = () => {
     console.log(productDetail)
 
     return (
-        <div>
+        <div className='Container'>
+            <div>
             <span>{productDetail.title}</span>
             <img src={productDetail.productImgs?.[0]} alt="" />
+            </div>
+            
         </div>
     );
 };
