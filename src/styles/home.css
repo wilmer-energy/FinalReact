@@ -19,6 +19,19 @@
 }
 
 
+.carousel-inner img {
+    max-height: 70vh;
+   
+    object-fit: cover !important;
+}
+
+.videoc {
+    max-height: 70vh;
+   
+    object-fit: cover !important; 
+}
+
+
 @media (max-width: 767.98px) {
 
     .img-logo{
