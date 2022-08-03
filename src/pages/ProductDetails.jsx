@@ -10,48 +10,44 @@ const ProductDetails = () => {
             return parseInt(e.id) === parseInt(id)
         })
 
-//Variable a usar "productDetail"  FABIAN
+    //Variable a usar "productDetail"  FABIAN
+
+    // console.log(productDetail)
 
     let productDetail = product[0]
-    console.log(productDetail)
+
+    let category = product[0].category.name
+    let filtered = allProducts.filter((e) => {
+        return e.category.name === category
+    })
+
+    console.log(filtered)
 
     return (
         <div className='Produc-detail-Container'>
-        <div className='history'>
-            <a href="#">Home</a>
-            <div className='Separator'></div>
-            <b>{productDetail.title}</b>
-        </div>
+            <div className='history'>
+                <a href="#">Home</a>
+                <b>{productDetail.title}</b>
+            </div>
 
-        <div className='Produc-inf'>
-            <div className='col'>
-                <div className='images-gallery'>
-                    <div className='gallery'>
-                        <div className='button-gallery left'>
-                            <button>
-                                <i className='icon-cheveron-left'> :: before</i>
-                            </button>
-                        </div>
-                        <div className='button-gallery rigth'>
-                            <button>
-                                <i className='icon-cheveron-rigth'> :: before</i>
-                            </button>
-                        </div>
-                        <ul className='image-list'>
-                            <li><img src={productDetail.productImgs?.[0]} alt="" /></li>
-                            <li><img src={productDetail.productImgs?.[1]} alt="" /></li>
-                            <li><img src={productDetail.productImgs?.[2]} alt="" /></li>
+            <div className='Produc-inf'>
+
+                <div className='Product-images'>
+                    <div className='Product-Photo'>
+                        <img src={productDetail.productImgs?.[0]} alt="" />
+                    </div>
+                    <div className='Product-gallery'>
+                        <ul>
+                            <li class> <img src={productDetail.productImgs?.[0]} alt="" /></li>
+                            <li className='selected'><img src={productDetail.productImgs?.[1]} alt="" /></li>
+                            <li class> <img src={productDetail.productImgs?.[2]} alt="" /></li>
                         </ul>
                     </div>
-                    <ul className='imgages-preview'>
-                        <li class> <img src={productDetail.productImgs?.[0]} alt="" /></li>
-                        <li className='selected'><img src={productDetail.productImgs?.[1]} alt="" /></li>
-                        <li class> <img src={productDetail.productImgs?.[2]} alt="" /></li>
-                    </ul>
+
+
                 </div>
-            </div>
-            <div className='col'>
-                <div className='Produc-info'>
+
+                <div className='Produc-details'>
                     <div className='brand'></div>
                     <h2><span>{productDetail.title}</span></h2>
                     <div className='Produc-Data'>
@@ -64,17 +60,17 @@ const ProductDetails = () => {
                                     </span>
                                 </div>
                                 <div className='quantity'>
-                                    <div className='Label'>Qauntity</div>
-                                    <div className='flex'>
+                                    <div className='quantity-Label'>Qauntity</div>
+                                    <div className='quantity-counter'>
                                         <button disabled>
                                             <i className='Icon-minus'>
-                                                :: before
+                                                -
                                             </i>
                                         </button>
                                         <div className='value'>1</div>
                                         <button>
                                             <i className='icon-plus'>
-                                                ::before
+                                                +
                                             </i>
                                         </button>
                                     </div>
@@ -83,22 +79,21 @@ const ProductDetails = () => {
                             <button className='add-cart-button'>
                                 Add to shop card
                                 <i className='icon-shopping-cart'>
-                                    ::before
+
                                 </i>
                             </button>
                         </div>
-                        <p className='product-descripcion'>
-                            {productDetail.description}
-                        </p>
 
                     </div>
                 </div>
-
             </div>
-        </div>        
+
+            <div className='Product-Descripcion'>
+                {productDetail.description}
+            </div>
 
 
-    </div>
+        </div>
     );
 };
 
