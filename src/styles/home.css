@@ -8,8 +8,6 @@
 }
 
 
-
-
 .productCard img{
     width: 100px;
 }
@@ -20,22 +18,61 @@
 
 
 .carousel-inner img {
-    max-height: 70vh;
+    height: 70vh;
    
     object-fit: cover !important;
 }
 
 .videoc {
-    max-height: 70vh;
+    height: 70vh;
    
     object-fit: cover !important; 
 }
+
+.sh {
+    text-shadow: 2px 2px #000000;
+}
+
+.cur{
+    cursor: pointer;
+}
+
+.im:hover {
+    src: url(https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+}
+ 
+
+
+@media (max-width: 424.98px) {
+    .tl {
+        font-size: 14px;
+    }
+    
+
+
+ }
+
+
+
+
 
 
 @media (max-width: 767.98px) {
 
     .img-logo{
         width: 120px;
+    }
+
+    .carousel-inner img {
+        height: 45vh;
+       
+        object-fit: cover !important;
+    }
+
+    .videoc {
+        height: 45vh;
+       
+        object-fit: cover !important; 
     }
 
  }

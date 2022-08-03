@@ -16,7 +16,7 @@ const Header = () => {
                         <Button variant="none" className='p-2'><i className="fa-solid fa-bag-shopping fs-6"></i></Button>
                         <Button variant="none" className='p-2'><i className="fa-solid fa-cart-shopping fs-6"></i></Button>
                     </Form>
-                    <Navbar.Brand href="#">
+                    <Navbar.Brand href="/">
                         <img className='img-logo' src="./src/img/Chomerce-logo.png" alt="" />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />

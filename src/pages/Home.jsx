@@ -5,6 +5,7 @@ import { getProductsThunk, update } from '../store/slices/products.slice';
 import { useNavigate } from 'react-router-dom';
 import Header from '../Components/Header';
 import Carousel from '../Components/Carousel';
+import Category from '../Components/Category';
 
 const Home = () => {
 
@@ -46,6 +47,7 @@ const Home = () => {
             {/* <header>e-commerce</header> */}
             <Header />
             <Carousel />
+            <Category />
             <div>Price</div>
             <div>Filter by price</div>
             <div>Category</div>
