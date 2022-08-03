@@ -72,6 +72,9 @@ const Home = () => {
     const showPurchases=()=>{
         navigate("/purchases")
     }
+    const showCart=()=>{
+        navigate("/cart")
+    }
 
 
 
@@ -84,7 +87,7 @@ const Home = () => {
                 <li><button>e-commerce</button></li>
                 <li><button onClick={showLogIn}>Log in</button></li>
                 <li><button onClick={showPurchases}>Purchases</button></li>
-                <li><button>Cart</button></li>
+                <li><button onClick={showCart}>Cart</button></li>
             </ul>
 
             <div>Price</div>
