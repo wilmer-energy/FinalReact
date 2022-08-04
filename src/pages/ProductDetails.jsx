@@ -13,15 +13,15 @@ const ProductDetails = () => {
     //Variable a usar "productDetail"  FABIAN
 
     // console.log(productDetail)
-
+    let allProducts = useSelector(state => state.productsSlice)
     let productDetail = product[0]
 
-    let category = product[0].category.name
-    let filtered = allProducts.filter((e) => {
+     let category = product[0].category.name
+     let filtered = allProducts.filter((e) => {
         return e.category.name === category
     })
 
-    console.log(filtered)
+     console.log(filtered)
 
     return (
         <div className='Produc-detail-Container'>
@@ -38,9 +38,9 @@ const ProductDetails = () => {
                     </div>
                     <div className='Product-gallery'>
                         <ul>
-                            <li class> <img src={productDetail.productImgs?.[0]} alt="" /></li>
+                            <li > <img src={productDetail.productImgs?.[0]} alt="" /></li>
                             <li className='selected'><img src={productDetail.productImgs?.[1]} alt="" /></li>
-                            <li class> <img src={productDetail.productImgs?.[2]} alt="" /></li>
+                            <li > <img src={productDetail.productImgs?.[2]} alt="" /></li>
                         </ul>
                     </div>
 
@@ -90,6 +90,42 @@ const ProductDetails = () => {
 
             <div className='Product-Descripcion'>
                 {productDetail.description}
+            </div>
+            <img src={filtered[0].productImgs[0]} alt="" />
+            <div className='Pricee'>
+            ${filtered[0].price}
+            </div>         
+
+            <div className='SimilarItems'>
+            {filtered[0].title}
+            </div>
+
+            <img src={filtered[1].productImgs[0]} alt="" />
+            <div className='Pricee'>
+            ${filtered[1].price}
+            </div>         
+
+            <div className='SimilarItems'>
+            {filtered[1].title}
+            </div>
+
+            
+            <img src={filtered[2].productImgs[0]} alt="" />
+            <div className='Pricee'>
+            ${filtered[2].price}
+            </div>         
+
+            <div className='SimilarItems'>
+            {filtered[2].title}
+            </div>
+
+            <img src={filtered[3].productImgs[0]} alt="" />
+            <div className='Pricee'>
+            ${filtered[3].price}
+            </div>         
+
+            <div className='SimilarItems'>
+            {filtered[3].title}
             </div>
 
 
