@@ -43,27 +43,27 @@ const Category = () => {
             <div className='row'>
                 <div className='col-12 col-sm-6'>
 
-                    <div className='position-relative cur'>
-                       <img className='img-fluid pb-2 im' src="https://images.pexels.com/photos/1092644/pexels-photo-1092644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" /> 
-                       <h2 className='position-absolute top-50 start-50 translate-middle text-light sh'>SMART PHONE</h2>       
+                    <div className='position-relative cur m-2'>
+                       <img className='img-fluid  im' src="https://images.pexels.com/photos/1092644/pexels-photo-1092644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" /> 
+                       <h2 className='position-absolute top-50 start-50 translate-middle text-light sh'>SMARTPHONE</h2>       
 
                     </div>
 
-                    <div className='position-relative cur'>
-                       <img className='img-fluid pb-2' src="https://images.pexels.com/photos/4006158/pexels-photo-4006158.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />        
+                    <div className='position-relative cur m-2'>
+                       <img className='img-fluid im' src="https://images.pexels.com/photos/4006158/pexels-photo-4006158.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />        
                        <h2 className='position-absolute top-50 start-50 translate-middle text-light sh'>COMPUTERS</h2> 
                     </div>
 
                 </div>
 
                 <div className='col-12 col-sm-6'>
-                        <div className='position-relative cur'>
-                        <img className='img-fluid pb-2' src="https://images.pexels.com/photos/4009409/pexels-photo-4009409.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />   
+                        <div className='position-relative cur m-2'>
+                        <img className='img-fluid im' src="https://images.pexels.com/photos/4009409/pexels-photo-4009409.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />   
                         <h2 className='position-absolute top-50 start-50 translate-middle text-light sh'>SMART TV</h2> 
                         </div>
 
-                        <div className='position-relative cur'>
-                       <img className='img-fluid pb-2' src="https://images.pexels.com/photos/1841841/pexels-photo-1841841.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />        
+                        <div className='position-relative cur m-2'>
+                       <img className='img-fluid im' src="https://images.pexels.com/photos/1841841/pexels-photo-1841841.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />        
                        <h2 className='position-absolute top-50 start-50 translate-middle text-light sh'>OTHERS</h2> 
                     </div>
 
