@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { useNavigate } from 'react-router-dom';
+import ShoppingCart from './ShoppingCart';
+
 
 const Header = () => {
+    const navigate = useNavigate()
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     return (
         <>
             <Navbar bg="light" expand="lg" sticky="top" >
@@ -14,7 +21,7 @@ const Header = () => {
 
                         <Button variant="none" className='p-2'><i className="fa-regular fa-user fs-6"></i></Button>
                         <Button variant="none" className='p-2'><i className="fa-solid fa-bag-shopping fs-6"></i></Button>
-                        <Button variant="none" className='p-2'><i className="fa-solid fa-cart-shopping fs-6"></i></Button>
+                        <Button variant="none" onClick={handleShow}><i className="fa-solid fa-cart-shopping fs-5"></i></Button>
                     </Form>
                     <Navbar.Brand href="/">
                         <img className='img-logo' src="./src/img/Chomerce-logo.png" alt="" />
@@ -34,7 +41,7 @@ const Header = () => {
 
                             <Button variant="none"><i className="fa-regular fa-user fs-5"></i></Button>
                             <Button variant="none"><i className="fa-solid fa-bag-shopping fs-5"></i></Button>
-                            <Button variant="none"><i className="fa-solid fa-cart-shopping fs-5"></i></Button>
+                            <Button variant="none" onClick={handleShow}><i className="fa-solid fa-cart-shopping fs-5"></i></Button>
                         </Form>
                     </Navbar.Collapse>
 
@@ -42,6 +49,7 @@ const Header = () => {
 
                 </Container>
             </Navbar>
+            <ShoppingCart show={show} handleClose={handleClose} />
         </>
     );
 };
