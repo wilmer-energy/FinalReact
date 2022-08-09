@@ -13,6 +13,18 @@ const Header = () => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+   
+    const showLogIn = () => {
+        navigate("/LogIn")
+    }
+    const showPurchases = () => {
+        navigate("/purchases")
+    }
+    const showCart = () => {
+        navigate("/cart")
+    }
+
+
     return (
         <>
             <Navbar bg="light" expand="lg" sticky="top" >
@@ -39,8 +51,8 @@ const Header = () => {
                         </Nav>
                         <Form className="d-flex gap-0 gap-sm-2 d-none d-lg-flex">
 
-                            <Button variant="none"><i className="fa-regular fa-user fs-5"></i></Button>
-                            <Button variant="none"><i className="fa-solid fa-bag-shopping fs-5"></i></Button>
+                            <Button variant="none"onClick={showLogIn}><i className="fa-regular fa-user fs-5"></i></Button>
+                            <Button variant="none"onClick={showPurchases}><i className="fa-solid fa-bag-shopping fs-5"></i></Button>
                             <Button variant="none" onClick={handleShow}><i className="fa-solid fa-cart-shopping fs-5"></i></Button>
                         </Form>
                     </Navbar.Collapse>
