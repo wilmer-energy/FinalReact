@@ -130,8 +130,7 @@ cursor: pointer;
     }
 
     .videoc {
-        height: 45vh;
-       
+        height: 45vh;       
         object-fit: cover !important; 
     }
 
