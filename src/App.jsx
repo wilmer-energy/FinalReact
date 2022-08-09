@@ -19,7 +19,7 @@ function App() {
         <Route path='/LogIn' element={<LogIn/>}/>
         <Route path='purchases' element={<Purchases/>}/>
       </Routes>
-      <Footer />  
+       
     </HashRouter>
   )
 }
