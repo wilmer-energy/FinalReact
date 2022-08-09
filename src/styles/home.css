@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;600&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,7 +8,7 @@
 }
 
 
-.productCard img{
+.productCard img {
     width: 100px;
 }
 
@@ -19,46 +19,46 @@
 
 .carousel-inner img {
     height: 70vh;
-   
+
     object-fit: cover !important;
 }
 
 .videoc {
     height: 70vh;
-   
-    object-fit: cover !important; 
+
+    object-fit: cover !important;
 }
 
 .sh {
     text-shadow: 2px 2px #000000;
 }
 
-.cur{
+.cur {
     overflow: hidden;
     cursor: pointer;
 }
 
 
 .im {
-    
+
     transition: 0.5s;
 }
 
 
 
 .im:hover {
-    
-   transform: scale(1.2);
+
+    transform: scale(1.2);
 }
- 
+
 .buton-search {
     background-color: #fd9247;
     border: none;
-   
+
 
 }
 
-.buton-cart{
+.buton-cart {
     background-color: #fd9247;
     color: white;
     width: 50px;
@@ -68,15 +68,15 @@
     right: 10px;
     bottom: 10px;
     cursor: pointer;
-   
+
 }
 
 
 .img-prod {
-object-fit: contain;
-height: 230px;
-width: 80%;
-cursor: pointer;
+    object-fit: contain;
+    height: 230px;
+    width: 80%;
+    cursor: pointer;
 }
 
 .card {
@@ -90,7 +90,7 @@ cursor: pointer;
 
 .aside {
     height: fit-content;
-    
+
 }
 
 .input-c {
@@ -100,39 +100,58 @@ cursor: pointer;
 .buton-filter {
     background-color: #fd9247;
     border-radius: 5%;
-   font-weight: bold;
+    font-weight: bold;
 }
 
-.footer{
+.footer-container{
+    position: relative;
+    float: left;
+    width: 100%;
+
+}
+
+.footer {
     position: relative;
     float: left;
     width: 100%;
 }
-.footer-section{
-    background-color: rgba(0, 0, 0, 0.2); 
+
+.footer-section {
+    background-color: rgba(0, 0, 0, 0.2);
 }
+
 
 @media (max-width: 424.98px) {
     .tl {
-        font-size: 14px; } 
- }
+
+        font-size: 14px;
+    }
+}
+
+
+
+
+
 
 @media (max-width: 767.98px) {
 
-    .img-logo{
+    .img-logo {
         width: 120px;
     }
 
     .carousel-inner img {
         height: 45vh;
-       
+
         object-fit: cover !important;
     }
 
     .videoc {
-        height: 45vh;       
-        object-fit: cover !important; 
+
+        height: 45vh;
+
+
+
+        object-fit: cover !important;
     }
 
- }
-
+}
