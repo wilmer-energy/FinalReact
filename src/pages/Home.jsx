@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux/es/hooks/useDispatch';
 import { getProductsThunk, update } from '../store/slices/products.slice';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { addCartThunk } from '../store/slices/car.slice';
 
 const Home = () => {
 
@@ -76,6 +77,11 @@ const Home = () => {
         navigate("/cart")
     }
 
+    //--------------Cart-----------
+    const addCart =(obj)=>{
+        dispatch(addCartThunk(obj))
+    }
+
 
 
 
@@ -102,7 +108,9 @@ const Home = () => {
             <div>Category
                 <ul>
                     {categories?.map((e)=>{
-                        return <li key={e} onClick={()=>{filterByCategory(categories.indexOf(e))}}>{e}</li>
+                        return (<li key={e} onClick={()=>{filterByCategory(categories.indexOf(e))}}>{e}
+                        
+                        </li>)
                     })}
                 </ul>
             </div>
@@ -123,7 +131,7 @@ const Home = () => {
                         <div>
                             <span>Price: </span>
                             <span>{e.price}</span>
-                            <button>Add to bag</button>
+                            <button onClick={()=>{}}>Add to bag</button>
                         </div>
                     </div>)
                 })}
