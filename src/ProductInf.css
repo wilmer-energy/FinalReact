@@ -126,7 +126,7 @@ html {
     position: relative;
     float: left;
     box-sizing: border-box;
-    background: #DBB671;
+    background: #fd9247;
     color: #fff;
     margin-bottom: 50px;
     padding: 15px;
@@ -216,16 +216,13 @@ html {
 }
 
 .ButtoCardPreview{
-    float: left;
-    width: 100%;
-    background:#DBB671;
-    border-radius: 50%;
-    bottom: 10px;
-    color: #fff;
-    font-size: 1.3rem;
-    height: 50px;
-    line-height: 0;
-    position: absolute;
-    right: 30px;
+    background-color: white;
+    color: white;
     width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    cursor: pointer;  
 }
