@@ -103,28 +103,19 @@ cursor: pointer;
    font-weight: bold;
 }
 
-.footer {
-    background-color: #f1f1f1;
+.footer{
+    position: relative;
+    float: left;
+    width: 100%;
 }
-
 .footer-section{
-    /* background-color: #472ed4; */
-   background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.2); 
 }
 
 @media (max-width: 424.98px) {
     .tl {
-        font-size: 14px;
-    }
-    
-
-
+        font-size: 14px; } 
  }
-
-
-
-
-
 
 @media (max-width: 767.98px) {
 

@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux/es/exports';
 import Header from '../Components/Header';
-import Footer from '../Components/Footer';
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import Footer from '../Components/Footer';
 
 const ProductDetails = () => {
 
@@ -87,7 +87,7 @@ const ProductDetails = () => {
                         </div>
 
                         <button className='add-cart-button'>
-                            Add to shop card <FontAwesomeIcon icon={faCartShopping} />
+                            Add to shop card <i className="fa-solid fa-cart-plus"></i>
                         </button>
 
                     </div>
@@ -120,8 +120,6 @@ const ProductDetails = () => {
                         <div className='ButtoCardPreview'>
                             <button className='p-2 border-0 fs-4 buton-cart'>
                                 <i className="fa-solid fa-cart-plus"></i>
-
-                                {/* <FontAwesomeIcon icon={faCartShopping} /> */}
                             </button>
                         </div>
                     </div>
@@ -145,9 +143,8 @@ const ProductDetails = () => {
                         </div>
 
                         <div className='ButtoCardPreview'>
-                            <button className='add-cartProductPreview'>
-                                <FontAwesomeIcon icon={faCartShopping} />
-
+                            <button className='p-2 border-0 fs-4 buton-cart'>
+                                <i className="fa-solid fa-cart-plus"></i>
                             </button>
                         </div>
                     </div>
@@ -170,8 +167,8 @@ const ProductDetails = () => {
 
                         </div>
                         <div className='ButtoCardPreview'>
-                            <button className='add-cartProductPreview'>
-                                <FontAwesomeIcon icon={faCartShopping} />
+                            <button className='p-2 border-0 fs-4 buton-cart'>
+                                <i className="fa-solid fa-cart-plus"></i>
                             </button>
                         </div>
                     </div>
@@ -195,8 +192,8 @@ const ProductDetails = () => {
                         </div>
 
                         <div className='ButtoCardPreview'>
-                            <button className='add-cartProductPreview'>
-                                <FontAwesomeIcon icon={faCartShopping} />
+                            <button className='p-2 border-0 fs-4 buton-cart'>
+                                <i className="fa-solid fa-cart-plus"></i>
                             </button>
                         </div>
                     </div>
@@ -204,7 +201,7 @@ const ProductDetails = () => {
                 </div>
             </div>
 
-            {/* <Footer />  */}
+
 
         </div>
 

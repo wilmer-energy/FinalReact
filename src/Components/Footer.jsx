@@ -3,24 +3,20 @@ import React from 'react';
 const Footer = () => {
     return (
         <>
-            <div className="">
+            <div className="footer">
 
 
                 <footer
-                    className="text-center text-lg-start text-white"
-                    style={{ backgroundColor: '#1c2331' }}
+                     className="text-center text-lg-start text-white"
+                     style={{ backgroundColor: '#1c2331' }}
                 >
 
                     <section
-                        className="d-flex justify-content-between p-4 footer-section"
-
-                    >
+                        className="d-flex justify-content-between p-4 footer-section"                    >
 
                         <div className="me-5">
                             <span>Get connected with us on social networks:</span>
                         </div>
-
-
 
                         <div>
                             <a href="" className="text-white me-4">
@@ -114,7 +110,7 @@ const Footer = () => {
                                         className="mb-4 mt-0 d-inline-block mx-auto"
 
                                     />
-                                    <p><i className="fas fa-home mr-3"></i> Mexico, DC 10012</p>
+                                    <p><i className="fas fa-home mr-3 "></i> Mexico, DC 10012</p>
                                     <p><i className="fas fa-envelope mr-3"></i> chomerce@gmail.com</p>
                                     <p><i className="fas fa-phone mr-3"></i> + 01 234 567 88</p>
                                     <p><i className="fas fa-print mr-3"></i> + 01 234 567 89</p>
