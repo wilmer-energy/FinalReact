@@ -39,6 +39,7 @@ const Home = () => {
         })
         setProductsFilter(p)
     }
+
     const showDetails = (index) => {
         navigate(`/product/${index}`)
     }
@@ -46,7 +47,7 @@ const Home = () => {
     return (
         <div className='home'>
             {/* <header>e-commerce</header> */}
-            <Header />
+           
             <Carousel />
             <Category />
             {/* <div>Price</div>
@@ -144,7 +145,7 @@ const Home = () => {
                 </div>
 
             </div>
-            <Footer />
+            {/* <Footer /> */}
 
         </div>
     );
