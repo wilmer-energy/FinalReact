@@ -67,7 +67,8 @@ const Home = () => {
     }
      //--------------Cart-----------
     const addCart = (obj) => {
-        dispatch(addCartThunk(obj))
+        //dispatch(addCartThunk(obj))
+        console.log(obj)
     }
 
     return (
@@ -150,7 +151,7 @@ const Home = () => {
 
 
                                                 </div>
-                                                <button className='p-2 border-0 fs-4 buton-cart'>
+                                                <button className='p-2 border-0 fs-4 buton-cart' onClick={()=>{addCart({id:e.id,quantity: 1})}}>
                                                     <i className="fa-solid fa-cart-plus"></i>
                                                 </button>
                                             </div>

@@ -15,7 +15,7 @@ export const cart = createSlice({
 export const getCartThunk = () => (dispatch) => {
     //dispatch(setIsLoading(true));
     return axios.get("https://ecommerce-api-react.herokuapp.com/api/v1/cart",getConfig())
-        .then((res) => dispatch(setCar(res.data)))
+        .then((res) => dispatch(setCar(res.data.data.cart.products)))
         .finally(() => {/*dispatch(setIsLoading(false)) */});
 }
 

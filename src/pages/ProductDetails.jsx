@@ -13,16 +13,16 @@ const ProductDetails = () => {
 
     const { id } = useParams()
     
-
+    
     let products = useSelector(state => state.productsSlice)
         .filter((e) => {
             return parseInt(e.id) === parseInt(id)
         })
 
     let allProducts = useSelector(state => state.productsSlice)
-    let productDetail = product[0]
+    let productDetail = products[0]
 
-    let category = product[0].category.name
+    let category = products[0]?.category.name
     let filtered = allProducts.filter((e) => {
         return e.category.name === category
     })
@@ -38,7 +38,7 @@ const ProductDetails = () => {
             <div className='DetailsProduct'>
                 <div className='history'>
                     <a href="#">Home</a>
-                    <b>{productDetail.title}</b>
+                    <b>{productDetail?.title}</b>
                 </div>
                 <div className='Produc-inf'>
 
@@ -48,9 +48,9 @@ const ProductDetails = () => {
                         </div>
                         <div className='Product-gallery'>
                             <ul>
-                                <li onClick={() => { setIndexPhoto(0) }}> <img src={productDetail.productImgs?.[0]} alt="" /></li>
-                                <li onClick={() => { setIndexPhoto(1) }}> <img src={productDetail.productImgs?.[1]} alt="" /> </li>
-                                <li onClick={() => { setIndexPhoto(2) }}> <img src={productDetail.productImgs?.[2]} alt="" /></li>
+                                <li onClick={() => { setIndexPhoto(0) }}> <img src={productDetail?.productImgs?.[0]} alt="" /></li>
+                                <li onClick={() => { setIndexPhoto(1) }}> <img src={productDetail?.productImgs?.[1]} alt="" /> </li>
+                                <li onClick={() => { setIndexPhoto(2) }}> <img src={productDetail?.productImgs?.[2]} alt="" /></li>
                             </ul>
                         </div>
 
@@ -58,17 +58,17 @@ const ProductDetails = () => {
 
                     <div className='Product-details'>
                         <div className='brand'></div>
-                        <h2><span>{productDetail.title}</span></h2>
+                        <h2><span>{productDetail?.title}</span></h2>
 
 
                         <div className='Product-Descripcion'>
-                            {productDetail.description}
+                            {productDetail?.description}
                         </div>
 
                         <div className='Price'>
                             <span className='label'>Price </span>
                             <span className='amount'>
-                                $ {productDetail.price}
+                                $ {productDetail?.price}
                             </span>
                         </div>
                         <div className='quantity'>
@@ -102,18 +102,18 @@ const ProductDetails = () => {
 
                     <div className='Productcard'>
                         <div className='ImgproductPreview'>
-                            <img className='Primary' src={filtered[0].productImgs[0]} alt="" />
-                            <img className='Secundary' src={filtered[0].productImgs[1]} alt="" />
+                            <img className='Primary' src={filtered[0]?.productImgs[0]} alt="" />
+                            <img className='Secundary' src={filtered[0]?.productImgs[1]} alt="" />
                         </div>
 
                         <div className='Inf-product-preview'>
                             <div className='ProductTittlePreview'>
-                                <b>{filtered[0].title}</b>
+                                <b>{filtered[0]?.title}</b>
                             </div>
                             <div className='ProductPricePreview'>
                                 <a>Price</a>
                                 <div>
-                                    <b> ${filtered[0].price} </b>
+                                    <b> ${filtered[0]?.price} </b>
                                 </div>
                                 <button className='add-cart-button'>
                                     Add to shop card
@@ -133,18 +133,18 @@ const ProductDetails = () => {
                     </div>
                     <div className='Productcard'>
                         <div className='ImgproductPreview'>
-                            <img className='Primary' src={filtered[1].productImgs[0]} alt="" />
-                            <img className='Secundary' src={filtered[1].productImgs[1]} alt="" />
+                            <img className='Primary' src={filtered[1]?.productImgs[0]} alt="" />
+                            <img className='Secundary' src={filtered[1]?.productImgs[1]} alt="" />
                         </div>
 
                         <div className='Inf-product-preview'>
                             <div className='ProductTittlePreview'>
-                                <b>{filtered[1].title}</b>
+                                <b>{filtered[1]?.title}</b>
                             </div>
                             <div className='ProductPricePreview'>
                                 <a>Price</a>
                                 <div>
-                                    <b> ${filtered[1].price} </b>
+                                    <b> ${filtered[1]?.price} </b>
                                 </div>
                             </div>
 
@@ -158,18 +158,18 @@ const ProductDetails = () => {
                     </div>
                     <div className='Productcard'>
                         <div className='ImgproductPreview'>
-                            <img className='Primary' src={filtered[2].productImgs[0]} alt="" />
-                            <img className='Secundary' src={filtered[2].productImgs[1]} alt="" />
+                            <img className='Primary' src={filtered[2]?.productImgs[0]} alt="" />
+                            <img className='Secundary' src={filtered[2]?.productImgs[1]} alt="" />
                         </div>
 
                         <div className='Inf-product-preview'>
                             <div className='ProductTittlePreview'>
-                                <b>{filtered[2].title}</b>
+                                <b>{filtered[2]?.title}</b>
                             </div>
                             <div className='ProductPricePreview'>
                                 <a>Price</a>
                                 <div>
-                                    <b> ${filtered[2].price} </b>
+                                    <b> ${filtered[2]?.price} </b>
                                 </div>
                             </div>
 
@@ -182,18 +182,18 @@ const ProductDetails = () => {
                     </div>
                     <div className='Productcard'>
                         <div className='ImgproductPreview'>
-                            <img className='Primary' src={filtered[3].productImgs[0]} alt="" />
-                            <img className='Secundary' src={filtered[3].productImgs[1]} alt="" />
+                            <img className='Primary' src={filtered[3]?.productImgs[0]} alt="" />
+                            <img className='Secundary' src={filtered[3]?.productImgs[1]} alt="" />
                         </div>
 
                         <div className='Inf-product-preview'>
                             <div className='ProductTittlePreview'>
-                                <b>{filtered[3].title}</b>
+                                <b>{filtered[3]?.title}</b>
                             </div>
                             <div className='ProductPricePreview'>
                                 <a>Price</a>
                                 <div>
-                                    <b> ${filtered[3].price} </b>
+                                    <b> ${filtered[3]?.price} </b>
                                 </div>
                             </div>
 
