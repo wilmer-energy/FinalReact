@@ -25,10 +25,40 @@ const ProductDetails = () => {
         return e.category.name === category
     })
 
+    let Products = [];
+    filtered.forEach((filterProduct)=>{
+
+        Products.push(
+            <div className='Productcard'>
+                <div className='ImgproductPreview'>
+                    <img className='Primary' src={filterProduct.productImgs[0]} alt="" />
+                    <img className='Secundary' src={filterProduct.productImgs[1]} alt="" />
+                </div>
+
+                <div className='Inf-product-preview'>
+                    <div className='ProductTittlePreview'>
+                        <b>{filterProduct.title}</b>
+                    </div>
+                    <div className='ProductPricePreview'>
+                        <a>Price</a>
+                        <div>
+                            <b> ${filterProduct.price} </b>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div className='ButtoCardPreview'>
+                    <button className='p-2 border-0 fs-4 buton-cart'>
+                        <i className="fa-solid fa-cart-plus"></i>
+                    </button>
+                </div>
+            </div>
+        )
+
+    })
+
     return (
-
-
-
         <div className='Produc-detail-Container'>
 
             <Header />
@@ -56,33 +86,36 @@ const ProductDetails = () => {
 
                     <div className='Product-details'>
                         <div className='brand'></div>
-                        <h2><span>{productDetail.title}</span></h2>
-
+                        <h2>{productDetail.title}</h2>
 
                         <div className='Product-Descripcion'>
                             {productDetail.description}
                         </div>
 
-                        <div className='Price'>
-                            <span className='label'>Price </span>
-                            <span className='amount'>
-                                $ {productDetail.price}
-                            </span>
-                        </div>
-                        <div className='quantity'>
-                            <div className='quantity-Label'>Qauntity</div>
-                            <div className='quantity-counter'>
-                                <button disabled>
-                                    <i className='Icon-minus'>
-                                        -
-                                    </i>
-                                </button>
-                                <div className='value'>1</div>
-                                <button>
-                                    <i className='icon-plus'>
-                                        +
-                                    </i>
-                                </button>
+                        <div className='ProducOptions'>
+                            <div className='Price'>
+                                <div>
+                                    <span className='label'>Price </span>
+                                </div>
+                                <span className='amount'>
+                                    <b>$ {productDetail.price}</b>
+                                </span>
+                            </div>
+                            <div className='quantity'>
+                                <div className='quantity-Label'>Quantity</div>
+                                <div className='quantity-counter'>
+                                    <button disabled>
+                                        <i className='Icon-minus'>
+                                            -
+                                        </i>
+                                    </button>
+                                    <div className='value'>1</div>
+                                    <button>
+                                        <i className='icon-plus'>
+                                            +
+                                        </i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
@@ -96,110 +129,12 @@ const ProductDetails = () => {
                     <strong>Discover similar items</strong>
                 </div>
                 <div className='Container-product-card-preview'>
-
-
-                    <div className='Productcard'>
-                        <div className='ImgproductPreview'>
-                            <img className='Primary' src={filtered[0].productImgs[0]} alt="" />
-                            <img className='Secundary' src={filtered[0].productImgs[1]} alt="" />
-                        </div>
-
-                        <div className='Inf-product-preview'>
-                            <div className='ProductTittlePreview'>
-                                <b>{filtered[0].title}</b>
-                            </div>
-                            <div className='ProductPricePreview'>
-                                <a>Price</a>
-                                <div>
-                                    <b> ${filtered[0].price} </b>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div className='ButtoCardPreview'>
-                            <button className='p-2 border-0 fs-4 buton-cart'>
-                                <i className="fa-solid fa-cart-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div className='Productcard'>
-                        <div className='ImgproductPreview'>
-                            <img className='Primary' src={filtered[1].productImgs[0]} alt="" />
-                            <img className='Secundary' src={filtered[1].productImgs[1]} alt="" />
-                        </div>
-
-                        <div className='Inf-product-preview'>
-                            <div className='ProductTittlePreview'>
-                                <b>{filtered[1].title}</b>
-                            </div>
-                            <div className='ProductPricePreview'>
-                                <a>Price</a>
-                                <div>
-                                    <b> ${filtered[1].price} </b>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div className='ButtoCardPreview'>
-                            <button className='p-2 border-0 fs-4 buton-cart'>
-                                <i className="fa-solid fa-cart-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div className='Productcard'>
-                        <div className='ImgproductPreview'>
-                            <img className='Primary' src={filtered[2].productImgs[0]} alt="" />
-                            <img className='Secundary' src={filtered[2].productImgs[1]} alt="" />
-                        </div>
-
-                        <div className='Inf-product-preview'>
-                            <div className='ProductTittlePreview'>
-                                <b>{filtered[2].title}</b>
-                            </div>
-                            <div className='ProductPricePreview'>
-                                <a>Price</a>
-                                <div>
-                                    <b> ${filtered[2].price} </b>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div className='ButtoCardPreview'>
-                            <button className='p-2 border-0 fs-4 buton-cart'>
-                                <i className="fa-solid fa-cart-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div className='Productcard'>
-                        <div className='ImgproductPreview'>
-                            <img className='Primary' src={filtered[3].productImgs[0]} alt="" />
-                            <img className='Secundary' src={filtered[3].productImgs[1]} alt="" />
-                        </div>
-
-                        <div className='Inf-product-preview'>
-                            <div className='ProductTittlePreview'>
-                                <b>{filtered[3].title}</b>
-                            </div>
-                            <div className='ProductPricePreview'>
-                                <a>Price</a>
-                                <div>
-                                    <b> ${filtered[3].price} </b>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div className='ButtoCardPreview'>
-                            <button className='p-2 border-0 fs-4 buton-cart'>
-                                <i className="fa-solid fa-cart-plus"></i>
-                            </button>
-                        </div>
-                    </div>
+                    
+                    {Products}                    
 
                 </div>
             </div>
+
             <Footer />
 
 
