@@ -16,7 +16,7 @@ const Purchases = () => {
         <div>
             <div>
                 {purchases.map(e=>{
-                    return (<div className="purchasesCard">
+                    return (<div className="purchasesCard" key={e.id}>
                         <span>
                             {e.createdAt}
                         </span>
