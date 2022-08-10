@@ -1,0 +1,28 @@
+
+.LoginContainer{
+    position: relative;
+    float: left;
+    width: 100%;    
+    background-color: rgb(250, 250, 250);  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+
+.Login {
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+.ButtonLogin{
+    position: relative;
+    float: left;
+    width: 100%;
+    
+}
+.Form.Label{
+    width: 50%;
+}

@@ -81,7 +81,6 @@ const ProductDetails = () => {
                     </div>
 
                     <div className='Product-details'>
-                        <div className='brand'></div>
                         <h2>{ProductSelect.title}</h2>
 
                         <div className='Product-Descripcion'>
