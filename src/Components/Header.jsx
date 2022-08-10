@@ -54,6 +54,7 @@ const Header = () => {
                             <Button variant="none"onClick={showLogIn}><i className="fa-regular fa-user fs-5"></i></Button>
                             <Button variant="none"onClick={showPurchases}><i className="fa-solid fa-bag-shopping fs-5"></i></Button>
                             <Button variant="none" onClick={handleShow}><i className="fa-solid fa-cart-shopping fs-5"></i></Button>
+                            <Button variant="none" onClick={showCart}><i className="fa-solid fa-cart-shopping fs-5"></i></Button>
                         </Form>
                     </Navbar.Collapse>
 

@@ -42,7 +42,7 @@ const ProductDetails = () => {
 
                     <div className='Product-images'>
                         <div className='Product-Photo'>
-                            <img src={productDetail.productImgs?.[indexPhoto]} alt="" />
+                            <img src={productDetail?.productImgs[indexPhoto]} alt="" />
                         </div>
                         <div className='Product-gallery'>
                             <ul>
