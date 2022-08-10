@@ -1,36 +1,34 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux/es/exports';
 import Header from '../Components/Header';
-import { faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import Footer from '../Components/Footer';
 
 const ProductDetails = () => {
 
-    const [indexPhoto, setIndexPhoto] = useState(0)
-
+    const [indexPhoto, setIndexPhoto] = useState(0)   
     const { id } = useParams()
-    let product = useSelector(state => state.productsSlice)
+
+    let Products = useSelector(state => state.productsSlice)
         .filter((e) => {
             return parseInt(e.id) === parseInt(id)
         })
 
+   
     let allProducts = useSelector(state => state.productsSlice)
-    let productDetail = product[0]
-
-    let category = product[0].category.name
-    let filtered = allProducts.filter((e) => {
+    let Product=(Products[0]);
+    const [ProductSelect, setProductSelect] = useState(Product)
+    let category = Product.category.name
+    let ProductsFiltered = allProducts.filter((e) => {
         return e.category.name === category
     })
 
-    let Products = [];
-    filtered.forEach((filterProduct)=>{
+    let ProductsHTML = [];
+    ProductsFiltered.forEach((filterProduct) => {
 
-        Products.push(
+        ProductsHTML.push(
             <div className='Productcard'>
-                <div className='ImgproductPreview'>
+                <div className='ImgproductPreview' onClick={() => { setProductSelect(filterProduct) }}>
                     <img className='Primary' src={filterProduct.productImgs[0]} alt="" />
                     <img className='Secundary' src={filterProduct.productImgs[1]} alt="" />
                 </div>
@@ -55,7 +53,6 @@ const ProductDetails = () => {
                 </div>
             </div>
         )
-
     })
 
     return (
@@ -66,30 +63,29 @@ const ProductDetails = () => {
             <div className='DetailsProduct'>
                 <div className='history'>
                     <a href="#">Home</a>
-                    <b>{productDetail.title}</b>
+                    <b>{ProductSelect.title}</b>
                 </div>
                 <div className='Produc-inf'>
 
                     <div className='Product-images'>
                         <div className='Product-Photo'>
-                            <img src={productDetail.productImgs?.[indexPhoto]} alt="" />
+                            <img src={ProductSelect.productImgs?.[indexPhoto]} alt="" />
                         </div>
                         <div className='Product-gallery'>
                             <ul>
-                                <li onClick={() => { setIndexPhoto(0) }}> <img src={productDetail.productImgs?.[0]} alt="" /></li>
-                                <li onClick={() => { setIndexPhoto(1) }}> <img src={productDetail.productImgs?.[1]} alt="" /> </li>
-                                <li onClick={() => { setIndexPhoto(2) }}> <img src={productDetail.productImgs?.[2]} alt="" /></li>
+                                <li onClick={() => { setIndexPhoto(0) }}> <img src={ProductSelect.productImgs?.[0]} alt="" /></li>
+                                <li onClick={() => { setIndexPhoto(1) }}> <img src={ProductSelect.productImgs?.[1]} alt="" /> </li>
+                                <li onClick={() => { setIndexPhoto(2) }}> <img src={ProductSelect.productImgs?.[2]} alt="" /></li>
                             </ul>
                         </div>
-
                     </div>
 
                     <div className='Product-details'>
                         <div className='brand'></div>
-                        <h2>{productDetail.title}</h2>
+                        <h2>{ProductSelect.title}</h2>
 
                         <div className='Product-Descripcion'>
-                            {productDetail.description}
+                            {ProductSelect.description}
                         </div>
 
                         <div className='ProducOptions'>
@@ -98,7 +94,7 @@ const ProductDetails = () => {
                                     <span className='label'>Price </span>
                                 </div>
                                 <span className='amount'>
-                                    <b>$ {productDetail.price}</b>
+                                    <b>$ {ProductSelect.price}</b>
                                 </span>
                             </div>
                             <div className='quantity'>
@@ -129,8 +125,8 @@ const ProductDetails = () => {
                     <strong>Discover similar items</strong>
                 </div>
                 <div className='Container-product-card-preview'>
-                    
-                    {Products}                    
+
+                    {ProductsHTML}
 
                 </div>
             </div>
