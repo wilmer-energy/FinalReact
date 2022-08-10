@@ -5,7 +5,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useNavigate } from 'react-router-dom';
+
 import Offcanvas from 'react-bootstrap/Offcanvas';
+
 
 import ShoppingCart from './ShoppingCart';
 
@@ -14,9 +16,20 @@ const Header = () => {
 
     const navigate = useNavigate()
     const [show, setShow] = useState(false);
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+   
+    const showLogIn = () => {
+        navigate("/LogIn")
+    }
+    const showPurchases = () => {
+        navigate("/purchases")
+    }
+    const showCart = () => {
+        navigate("/cart")
+    }
+
+
 
     return (
         <>
@@ -24,9 +37,13 @@ const Header = () => {
                 <Container className='flex-row-reverse flex-lg-row'>
                     <Form className="d-flex d-lg-none">
 
+
                         <Button variant="none" onClick={() => navigate('/LogIn')} className='p-2'><i className="fa-regular fa-user fs-6"></i></Button>
                         <Button variant="none" onClick={() => navigate('/purchases')} className='p-2'><i className="fa-solid fa-bag-shopping fs-6"></i></Button>
                         <Button variant="none" onClick={handleShow} className='p-2'><i className="fa-solid fa-cart-shopping fs-6"></i></Button>
+
+                        
+
                     </Form>
                     <Navbar.Brand href="/">
                         <img className='img-logo' src="./src/img/Chomerce-logo.png" alt="" />
@@ -44,10 +61,11 @@ const Header = () => {
                         </Nav>
                         <Form className="d-flex gap-0 gap-sm-2 d-none d-lg-flex">
 
-                            <Button variant="none" onClick={() => navigate('/LogIn')}><i className="fa-regular fa-user fs-5"></i></Button>
-                            <Button variant="none" onClick={() => navigate('/purchases')}><i className="fa-solid fa-bag-shopping fs-5"></i></Button>
+
+                            <Button variant="none"onClick={showLogIn}><i className="fa-regular fa-user fs-5"></i></Button>
+                            <Button variant="none"onClick={showPurchases}><i className="fa-solid fa-bag-shopping fs-5"></i></Button>
                             <Button variant="none" onClick={handleShow}><i className="fa-solid fa-cart-shopping fs-5"></i></Button>
-          
+
                         </Form>
                         
           

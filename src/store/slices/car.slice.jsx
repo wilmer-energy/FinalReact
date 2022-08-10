@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
-import getConfig from '../../utils/getConfig';
+
+import getConfig from '/src/utils/getConfig';
+
 
 export const cart = createSlice({
     name: 'car',
