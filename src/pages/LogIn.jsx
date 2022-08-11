@@ -28,10 +28,12 @@ const LogIn = () => {
     return (
         <div className='LoginContainer'>
 
+            <Header />
+
 
 
             <div className='Login'>
-                <Header />
+
                 <Form onSubmit={handleSubmit(submit)}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
@@ -49,7 +51,7 @@ const LogIn = () => {
                         <Form.Check type="checkbox" label="Check me out" />
                     </Form.Group>
                     <div className='ButtonLogin'>
-                        <Button variant="primary" type="submit">
+                        <Button variant="primary" type="submit" style={{width:"100%"}}>
                             Login
                         </Button>
                     </div>
