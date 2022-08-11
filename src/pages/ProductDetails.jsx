@@ -18,7 +18,7 @@ const ProductDetails = () => {
     let allProducts = useSelector(state => state.productsSlice)
     let Product=(Products[0]);
     const [ProductSelect, setProductSelect] = useState(Product)
-    let category = Product.category.name
+    let category = Product?.category.name
     let ProductsFiltered = allProducts.filter((e) => {
         return e.category.name === category
     })
@@ -63,17 +63,13 @@ const ProductDetails = () => {
             <div className='DetailsProduct'>
                 <div className='history'>
                     <a href="#">Home</a>
-                    <b>{ProductSelect.title}</b>
+                    <b>{ProductSelect?.title}</b>
                 </div>
                 <div className='Produc-inf'>
 
                     <div className='Product-images'>
                         <div className='Product-Photo'>
-<<<<<<< HEAD
-                            <img src={productDetail?.productImgs[indexPhoto]} alt="" />
-=======
-                            <img src={ProductSelect.productImgs?.[indexPhoto]} alt="" />
->>>>>>> b6a26c03b5677c9bc6c50358091587e1c25f419c
+                            <img src={ProductSelect?.productImgs?.[indexPhoto]} alt="" />
                         </div>
                         <div className='Product-gallery'>
                             <ul>
