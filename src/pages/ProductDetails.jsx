@@ -18,7 +18,7 @@ const ProductDetails = () => {
     let allProducts = useSelector(state => state.productsSlice)
     let Product=(Products[0]);
     const [ProductSelect, setProductSelect] = useState(Product)
-    let category = Product.category.name
+    let category = Product?.category.name
     let ProductsFiltered = allProducts.filter((e) => {
         return e.category.name === category
     })
@@ -63,28 +63,28 @@ const ProductDetails = () => {
             <div className='DetailsProduct'>
                 <div className='history'>
                     <a href="#">Home</a>
-                    <b>{ProductSelect.title}</b>
+                    <b>{ProductSelect?.title}</b>
                 </div>
                 <div className='Produc-inf'>
 
                     <div className='Product-images'>
                         <div className='Product-Photo'>
-                            <img src={ProductSelect.productImgs?.[indexPhoto]} alt="" />
+                            <img src={ProductSelect?.productImgs?.[indexPhoto]} alt="" />
                         </div>
                         <div className='Product-gallery'>
                             <ul>
-                                <li onClick={() => { setIndexPhoto(0) }}> <img src={ProductSelect.productImgs?.[0]} alt="" /></li>
-                                <li onClick={() => { setIndexPhoto(1) }}> <img src={ProductSelect.productImgs?.[1]} alt="" /> </li>
-                                <li onClick={() => { setIndexPhoto(2) }}> <img src={ProductSelect.productImgs?.[2]} alt="" /></li>
+                                <li onClick={() => { setIndexPhoto(0) }}> <img src={ProductSelect?.productImgs?.[0]} alt="" /></li>
+                                <li onClick={() => { setIndexPhoto(1) }}> <img src={ProductSelect?.productImgs?.[1]} alt="" /> </li>
+                                <li onClick={() => { setIndexPhoto(2) }}> <img src={ProductSelect?.productImgs?.[2]} alt="" /></li>
                             </ul>
                         </div>
                     </div>
 
                     <div className='Product-details'>
-                        <h2>{ProductSelect.title}</h2>
+                        <h2>{ProductSelect?.title}</h2>
 
                         <div className='Product-Descripcion'>
-                            {ProductSelect.description}
+                            {ProductSelect?.description}
                         </div>
 
                         <div className='ProducOptions'>
@@ -93,7 +93,7 @@ const ProductDetails = () => {
                                     <span className='label'>Price </span>
                                 </div>
                                 <span className='amount'>
-                                    <b>$ {ProductSelect.price}</b>
+                                    <b>$ {ProductSelect?.price}</b>
                                 </span>
                             </div>
                             <div className='quantity'>
