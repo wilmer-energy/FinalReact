@@ -12,7 +12,7 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import ShoppingCart from './ShoppingCart';
 
 
-const Header = () => {
+const Header = ({filterByCategory}) => {
 
     const navigate = useNavigate()
     const [show, setShow] = useState(false);
@@ -54,9 +54,9 @@ const Header = () => {
 
                         <Nav className='gap-2 m-auto'>
 
-                            <Nav.Link href="#" className='fw-semibold text-center'>Smart TV</Nav.Link>
+                            <Nav.Link href="#" className='fw-semibold text-center' >Smart TV</Nav.Link>
                             <Nav.Link href="#" className='fw-semibold text-center'>Computers</Nav.Link>
-                            <Nav.Link href="#" className='fw-semibold text-center'>Smartphone</Nav.Link>
+                            <Nav.Link href="#" className='fw-semibold text-center' >Smartphone</Nav.Link>
                             <Nav.Link href="#" className='fw-semibold text-center'>Kitchen</Nav.Link>
                         </Nav>
                         <Form className="d-flex gap-0 gap-sm-2 d-none d-lg-flex">

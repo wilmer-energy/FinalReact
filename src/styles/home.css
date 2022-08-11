@@ -120,6 +120,19 @@
     background-color: rgba(0, 0, 0, 0.2);
 }
 
+.categ {
+    cursor: pointer;
+}
+
+.categ:hover {
+    color: #fd9247;
+    font-weight: bolder;
+}
+
+.bgf{
+    background-color: rgb(239, 246, 246);
+    
+}
 
 @media (max-width: 424.98px) {
     .tl {

@@ -24,11 +24,16 @@ const LogIn = () => {
     }
 
     return (
-        <div>
-
-
-            
-            <Form onSubmit={handleSubmit(submit)}>
+        <div className='container w-100 ' >
+            <div className='row mx-auto' style={{maxWidth: '25rem'}}>
+                <div className='col-12 p-3 mt-4 mb-4 bgf'>
+                    <h2>Welcome! Enter your email and password to continue</h2>
+                    <div className='bg-light mt-2'>
+                        <h4>Test Data</h4>
+                        <p>mason@gmail.com</p>
+                        <p>mason1234</p>
+                    </div>
+                <Form onSubmit={handleSubmit(submit)}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" placeholder="Enter email" {...register("email")} />
@@ -41,13 +46,18 @@ const LogIn = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" placeholder="Password" {...register("password")} />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
-                <Button variant="primary" type="submit">
+               
+                <Button variant="primary" type="submit" className='w-100'>
                     Submit
                 </Button>
             </Form>
+                </div>
+
+            </div>
+
+
+            
+            
 
 
         </div>

@@ -76,9 +76,12 @@ const Home = () => {
     return (
         <div className='home'>
             {/* <header>e-commerce</header> */}
+          
+                
            
+
             <Carousel />
-            <Category />
+            <Category filterByCategory={filterByCategory}/>
             {/* <div>Price</div>
             <div>Filter by price</div>
             <div>Category</div>
@@ -91,15 +94,15 @@ const Home = () => {
                         <div className='aside sticky-top pt-5 ps-0 pe-4'>
                             <h5 className='pt-5'>Price</h5>
                             <hr />
-                            <form action="" className='mb-5'>
+                            <form action="" className='mb-5' onSubmit={handleSubmit(filterByPrice)}>
                                 <label htmlFor="from" className='d-flex justify-content-between mb-2'>
                                     <span>From</span>
-                                    <input className='input-c' type="number" id='from' />
+                                    <input className='input-c' type="number" id='from'  {...register("from")}/>
 
                                 </label>
                                 <label htmlFor="to" className='d-flex justify-content-between'>
                                     <span>To</span>
-                                    <input className='input-c' type="number" id='to' />
+                                    <input className='input-c' type="number" id='to'  {...register("to")} />
 
                                 </label>
                                 <div className='d-flex justify-content-end'>
@@ -108,9 +111,10 @@ const Home = () => {
                             </form>
                             <h5>Category</h5>
                             <hr />
-                            <h6 className='fw-normal mb-3'>Smart TV</h6>
-                            <h6 className='fw-normal mb-3'>Smartphone</h6>
-                            <h6 className='fw-normal mb-3'>Computer</h6>
+                            <h6 className='fw-normal mb-3 categ'>All</h6>
+                            <h6 className='fw-normal mb-3 categ' onClick={()=>{filterByCategory(0)}}>Smart TV</h6>
+                            <h6 className='fw-normal mb-3 categ' onClick={()=>{filterByCategory(2)}}> Smartphone</h6>
+                            <h6 className='fw-normal mb-3 categ' onClick={()=>{filterByCategory(1)}}>Computer</h6>
 
                         </div>
                     </div>
@@ -135,7 +139,7 @@ const Home = () => {
                         <div className='row pt-4'>
 
 
-                            <h3>Productos</h3>
+                            <h3 id='cat'>Productos</h3>
                             {productsFilter.map((e) => {
                                 return (
                                     <div className='col-12 col-sm-6 col-lg-4 mb-3' key={e.title}>

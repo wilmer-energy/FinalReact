@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Category = () => {
+const Category = ({filterByCategory}) => {
     return (
         <div className='container mt-3 '>
             <div className='row mb-3'>
@@ -43,13 +43,16 @@ const Category = () => {
             <div className='row'>
                 <div className='col-12 col-sm-6'>
 
-                    <div className='position-relative cur m-2'>
+                    <div className='position-relative cur m-2' onClick={()=>{filterByCategory(2)
+                    window.scrollTo( 0, 1400 );
+                    }}>
                        <img className='img-fluid  im' src="https://images.pexels.com/photos/1092644/pexels-photo-1092644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" /> 
-                       <h2 className='position-absolute top-50 start-50 translate-middle text-light sh'>SMARTPHONE</h2>       
+                       <h2 className='position-absolute top-50 start-50 translate-middle text-light sh' >SMARTPHONE</h2>       
 
                     </div>
 
-                    <div className='position-relative cur m-2'>
+                    <div className='position-relative cur m-2' onClick={()=>{filterByCategory(1)
+                    window.scrollTo( 0, 1400 )}}>
                        <img className='img-fluid im' src="https://images.pexels.com/photos/4006158/pexels-photo-4006158.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />        
                        <h2 className='position-absolute top-50 start-50 translate-middle text-light sh'>COMPUTERS</h2> 
                     </div>
@@ -57,10 +60,13 @@ const Category = () => {
                 </div>
 
                 <div className='col-12 col-sm-6'>
-                        <div className='position-relative cur m-2'>
+                <div className='position-relative cur m-2' onClick={()=>{filterByCategory(0)
+                window.scrollTo( 0, 1400 )
+                }}>
+                            
                         <img className='img-fluid im' src="https://images.pexels.com/photos/4009409/pexels-photo-4009409.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />   
                         <h2 className='position-absolute top-50 start-50 translate-middle text-light sh'>SMART TV</h2> 
-                        </div>
+                        </div> 
 
                         <div className='position-relative cur m-2'>
                        <img className='img-fluid im' src="https://images.pexels.com/photos/1841841/pexels-photo-1841841.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />        
