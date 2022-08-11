@@ -19,26 +19,34 @@ export const getCartThunk = () => (dispatch) => {
         .finally(() => {/*dispatch(setIsLoading(false)) */});
 }
 
-export const addCartThunk = () => (dispatch) => {
+export const addCartThunk = (obj) => (dispatch) => {
     
-    return axios.post("https://ecommerce-api-react.herokuapp.com/api/v1/cart",{id: 4,quantity: 99},getConfig())
+    return axios.post("https://ecommerce-api-react.herokuapp.com/api/v1/cart",obj,getConfig())
         .then(() => dispatch(getCartThunk()))
         .catch((error)=>{console.log(error)})
         .finally(() => {})
 }
 
-export const updateCartThunk = () => (dispatch) => {
+export const updateCartThunk = (item) => (dispatch) => {
     
-    return axios.patch("https://ecommerce-api-react.herokuapp.com/api/v1/cart",{id: 4,newQuantity: 4},getConfig())
+    return axios.patch("https://ecommerce-api-react.herokuapp.com/api/v1/cart",item,getConfig())
         .then(() => dispatch(getCartThunk()))
         .finally(() => {})
 }
 
-export const deleteCartThunk = () => (dispatch) => {
+export const deleteCartThunk = (id) => (dispatch) => {
     //dispatch(setIsLoading(true));
-    return axios.delete("https://ecommerce-api-react.herokuapp.com/api/v1/cart/1",getConfig())
+    return axios.delete(`https://ecommerce-api-react.herokuapp.com/api/v1/cart/${id}`,getConfig())
         .then(() => dispatch(getCartThunk()))
         .finally(() => {/*dispatch(setIsLoading(false))*/});
+}
+
+export const checkoutThunk = () => (dispatch) => {
+    
+    //dispatch(setIsLoading(true));
+    return axios.post("https://ecommerce-api-react.herokuapp.com/api/v1/purchases",{street: "Green St. 1456",colony: "Southwest",zipCode: 12345,city: "USA",references: "Some references"},getConfig())
+        //.then(() => dispatch(getCartThunk()))
+        .finally(() => {});//dispatch(setIsLoading(false)
 }
 
 export const { setCar } = cart.actions;

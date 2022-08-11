@@ -8,7 +8,7 @@ import Carousel from '../Components/Carousel';
 import Category from '../Components/Category';
 import Footer from '../Components/Footer';
 import { useForm } from 'react-hook-form';
-import { addCartThunk } from '../store/slices/car.slice';
+import { addCartThunk, updateCartThunk } from '../store/slices/car.slice';
 
 const Home = () => {
 
@@ -66,9 +66,9 @@ const Home = () => {
         navigate(`/product/${index}`)
     }
      //--------------Cart-----------
-    const addCart = (obj) => {
+    const addCart = (item) => {
         //dispatch(addCartThunk(obj))
-        console.log(obj)
+       dispatch(addCartThunk(item)) 
     }
 
     return (
