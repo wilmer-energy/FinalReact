@@ -3,9 +3,11 @@ import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux/es/exports';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
+import { useDispatch } from 'react-redux/es/hooks/useDispatch';
 
 const ProductDetails = () => {
 
+    const dispatch = useDispatch()
     const [indexPhoto, setIndexPhoto] = useState(0)   
     const { id } = useParams()
 
@@ -22,6 +24,11 @@ const ProductDetails = () => {
     let ProductsFiltered = allProducts.filter((e) => {
         return e.category.name === category
     })
+
+    const addCart = (item) => {
+        //dispatch(addCartThunk(obj))
+       dispatch(addCartThunk(item)) 
+    }
 
     let ProductsHTML = [];
     ProductsFiltered.forEach((filterProduct) => {
@@ -47,7 +54,7 @@ const ProductDetails = () => {
                 </div>
 
                 <div className='ButtoCardPreview'>
-                    <button className='p-2 border-0 fs-4 buton-cart'>
+                    <button className='p-2 border-0 fs-4 buton-cart' onClick={()=>{addCart({id:e.id,quantity: 1})}}>
                         <i className="fa-solid fa-cart-plus"></i>
                     </button>
                 </div>
@@ -96,7 +103,7 @@ const ProductDetails = () => {
                                     <b>$ {ProductSelect?.price}</b>
                                 </span>
                             </div>
-                            <div className='quantity'>
+                            {/* <div className='quantity'>
                                 <div className='quantity-Label'>Quantity</div>
                                 <div className='quantity-counter'>
                                     <button disabled>
@@ -111,11 +118,11 @@ const ProductDetails = () => {
                                         </i>
                                     </button>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
 
-                        <button className='add-cart-button'>
-                            Add to shop card <i className="fa-solid fa-cart-plus"></i>
+                        <button className='add-cart-button' onClick={()=>{addCart({id:e.id,quantity: 1})}}>
+                            Add to shop card <i className="fa-solid fa-cart-plus" ></i>
                         </button>
 
                     </div>

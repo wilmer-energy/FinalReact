@@ -73,14 +73,11 @@ const Home = () => {
 
     return (
         <div className='home'>
-            {/* <header>e-commerce</header> */}
+            
             <Header />
             <Carousel />
             <Category />
-            {/* <div>Price</div>
-            <div>Filter by price</div>
-            <div>Category</div>
-            <div>List of categories</div> */}
+          
 
 
             <div className='container'>
@@ -138,8 +135,9 @@ const Home = () => {
                                 return (
                                     <div className='col-12 col-sm-6 col-lg-4 mb-3' key={e.title}>
 
-                                        <div className='card ' onClick={() => { showDetails(e.id) }}>
-                                            <img className='card-img-top p-4 pb-0 img-prod' src={e.productImgs?.[0]} alt="" />
+                                        <div className='card ' >
+                                            <img className='card-img-top p-4 pb-0 img-prod 1' onClick={() => { showDetails(e.id) }} src={e.productImgs?.[0]} alt="" />
+                                            {/* <img className='card-img-top p-4 pb-0 img-prod 2' src={e.productImgs?.[1]} alt="" /> */}
                                             <hr />
                                             <div className="card-body pt-0 pb-5">
                                                 <h6 className="card-title ">{e.title}</h6>

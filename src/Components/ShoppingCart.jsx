@@ -47,7 +47,7 @@ const ShoppingCart = ({ show, handleClose }) => {
                     return (
                         <div key={e.id}>
 
-                            <ul>
+                            <ul>                                
                                 <div>
                                     {e.title} <br /> <span>${e.price}</span>
                                 </div>
