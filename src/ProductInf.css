@@ -24,6 +24,7 @@ html {
 
 .history a {
     margin-right: 8px;
+    text-decoration: none;
 
 }
 
@@ -120,6 +121,21 @@ html {
     width: 50%;
     padding: 50px;
     box-sizing: border-box;
+}
+
+.Product-details h2 {
+    font-size: 25px;
+}
+
+.ProducOptions{
+    position: relative;
+    float: left;
+    width: 100%;
+    display: flex;
+    margin: 25px 0px;
+}
+.Price{
+    width: 50%;
 }
 
 .quantity-counter {
@@ -230,3 +246,56 @@ html {
     box-sizing: border-box;
 
 }
+
+@media screen and (min-width: 401px) and (max-width: 800px) {
+    .Container-product-card-preview {
+               
+        grid-template-columns: 50% 50% ;
+        padding: 0% 24px;
+               
+    }
+    .Produc-inf{
+        padding: 0% 10px;
+    }
+
+    .Product-images{
+        width: 100%;
+    }
+
+    .Product-Photo{
+        padding: 5% 0%;
+    }
+
+    .Product-details{
+        width: 100%;
+        padding: 5% 24px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .Container-product-card-preview {
+      
+        grid-template-columns: 100% ;
+        padding: 0% 24px;
+               
+    }
+
+    .Produc-inf{
+        padding: 0% 10px;
+    }
+
+    .Product-images{
+        width: 100%;
+    }
+
+    .Product-Photo{
+        padding: 5% 0%;
+    }
+
+    .Product-details{
+        width: 100%;
+        padding: 5% 24px;
+    }
+}
+
+
