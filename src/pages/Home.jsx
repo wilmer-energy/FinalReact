@@ -8,7 +8,7 @@ import Carousel from '../Components/Carousel';
 import Category from '../Components/Category';
 import Footer from '../Components/Footer';
 import { useForm } from 'react-hook-form';
-import { addCartThunk } from '../store/slices/car.slice';
+import { addCartThunk, updateCartThunk } from '../store/slices/car.slice';
 
 const Home = () => {
 
@@ -25,7 +25,6 @@ const Home = () => {
     const products = useSelector(state => state.productsSlice)
     const [searchText, setSearchText] = useState("")
     const [productsFilter, setProductsFilter] = useState([])
-
 
     useEffect(() => {
         setProductsFilter(products)
@@ -67,8 +66,9 @@ const Home = () => {
         navigate(`/product/${index}`)
     }
      //--------------Cart-----------
-    const addCart = (obj) => {
-        dispatch(addCartThunk(obj))
+    const addCart = (item) => {
+        //dispatch(addCartThunk(obj))
+       dispatch(addCartThunk(item)) 
     }
 
     return (
@@ -151,7 +151,7 @@ const Home = () => {
 
 
                                                 </div>
-                                                <button className='p-2 border-0 fs-4 buton-cart'>
+                                                <button className='p-2 border-0 fs-4 buton-cart' onClick={()=>{addCart({id:e.id,quantity: 1})}}>
                                                     <i className="fa-solid fa-cart-plus"></i>
                                                 </button>
                                             </div>
