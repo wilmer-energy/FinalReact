@@ -59,7 +59,7 @@ const ProductDetails = () => {
     return (
         <div className='Produc-detail-Container'>
 
-            <Header />
+        
 
             <div className='DetailsProduct'>
                 <div className='history'>
@@ -132,7 +132,7 @@ const ProductDetails = () => {
                 </div>
             </div>
 
-            <Footer />
+            
 
 
 
