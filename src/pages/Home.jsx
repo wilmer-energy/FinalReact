@@ -89,15 +89,15 @@ const Home = () => {
                         <div className='aside sticky-top pt-5 ps-0 pe-4'>
                             <h5 className='pt-5'>Price</h5>
                             <hr />
-                            <form action="" className='mb-5'>
+                            <form action="" className='mb-5' onSubmit={handleSubmit(filterByPrice)}>
                                 <label htmlFor="from" className='d-flex justify-content-between mb-2'>
                                     <span>From</span>
-                                    <input className='input-c' type="number" id='from' />
+                                    <input className='input-c' type="number" id='from' {...register("from")}/>
 
                                 </label>
                                 <label htmlFor="to" className='d-flex justify-content-between'>
                                     <span>To</span>
-                                    <input className='input-c' type="number" id='to' />
+                                    <input className='input-c' type="number" id='to' {...register("to")}/>
 
                                 </label>
                                 <div className='d-flex justify-content-end'>
@@ -106,9 +106,12 @@ const Home = () => {
                             </form>
                             <h5>Category</h5>
                             <hr />
-                            <h6 className='fw-normal mb-3'>Smart TV</h6>
-                            <h6 className='fw-normal mb-3'>Smartphone</h6>
-                            <h6 className='fw-normal mb-3'>Computer</h6>
+                            
+                            <button className='buton-filter ps-2 pe-2 mt-3 border-0 pt-1 pb-1'onClick={()=>{filterByCategory(0)}}>Smart TV</button><br />
+                            <button className='buton-filter ps-2 pe-2 mt-3 border-0 pt-1 pb-1'onClick={()=>{filterByCategory(2)}}>Smartphone</button><br />
+                            <button className='buton-filter ps-2 pe-2 mt-3 border-0 pt-1 pb-1'onClick={()=>{filterByCategory(1)}}>Computer</button><br />
+
+                            
 
                         </div>
                     </div>

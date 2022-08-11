@@ -31,7 +31,7 @@ const Header = () => {
                 <Container className='flex-row-reverse flex-lg-row'>
                     <Form className="d-flex d-lg-none">
 
-                        <Button variant="none" className='p-2'><i className="fa-regular fa-user fs-6"></i></Button>
+                        <Button variant="none" className='p-2' onClick={showLogIn}><i className="fa-regular fa-user fs-6"></i></Button>
                         <Button variant="none" className='p-2'><i className="fa-solid fa-bag-shopping fs-6"></i></Button>
                         <Button variant="none" onClick={handleShow}><i className="fa-solid fa-cart-shopping fs-5"></i></Button>
                     </Form>

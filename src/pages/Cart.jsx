@@ -41,7 +41,7 @@ const Cart = () => {
                             <li>{e.title}</li>
                             <li>{e.productsInCart.quantity}</li>
                             <li><button onClick={() => { del(e.id) }}> Delete</button></li>
-                            <li><button onClick={() => { add({ id: e.id, newQuantity: parseInt(e.productsInCart.quantity) + 1 }) }}>mas</button></li>
+                            <li><button onClick={() => { add({ id: e.id, newQuantity: parseInt(e.productsInCart.quantity) + 1 }) }}>pp</button></li>
                             <li><button onClick={() => { substract({ id: e.id, newQuantity: parseInt(e.productsInCart.quantity) - 1 }) }}>menos</button></li>
                         </ul>
                         <br />

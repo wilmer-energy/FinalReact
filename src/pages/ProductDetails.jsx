@@ -73,9 +73,9 @@ const ProductDetails = () => {
                         </div>
                         <div className='Product-gallery'>
                             <ul>
-                                <li onClick={() => { setIndexPhoto(0) }}> <img src={ProductSelect.productImgs?.[0]} alt="" /></li>
-                                <li onClick={() => { setIndexPhoto(1) }}> <img src={ProductSelect.productImgs?.[1]} alt="" /> </li>
-                                <li onClick={() => { setIndexPhoto(2) }}> <img src={ProductSelect.productImgs?.[2]} alt="" /></li>
+                                <li onClick={() => { setIndexPhoto(0) }}> <img src={ProductSelect?.productImgs?.[0]} alt="" /></li>
+                                <li onClick={() => { setIndexPhoto(1) }}> <img src={ProductSelect?.productImgs?.[1]} alt="" /> </li>
+                                <li onClick={() => { setIndexPhoto(2) }}> <img src={ProductSelect?.productImgs?.[2]} alt="" /></li>
                             </ul>
                         </div>
                     </div>
