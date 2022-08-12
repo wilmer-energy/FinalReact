@@ -3,11 +3,10 @@ import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux/es/exports';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
-import { useDispatch } from 'react-redux/es/hooks/useDispatch';
 
 const ProductDetails = () => {
 
-    const dispatch = useDispatch()
+   
     const [indexPhoto, setIndexPhoto] = useState(0)   
     const { id } = useParams()
 
@@ -54,7 +53,7 @@ const ProductDetails = () => {
                 </div>
 
                 <div className='ButtoCardPreview'>
-                    <button className='p-2 border-0 fs-4 buton-cart' onClick={()=>{addCart({id:e.id,quantity: 1})}}>
+                    <button className='p-2 border-0 fs-4 buton-cart'>
                         <i className="fa-solid fa-cart-plus"></i>
                     </button>
                 </div>

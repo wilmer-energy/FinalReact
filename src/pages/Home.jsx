@@ -98,7 +98,7 @@ const Home = () => {
 
                                 </label>
                                 <div className='d-flex justify-content-end'>
-                                    <button className='buton-filter ps-2 pe-2 mt-3 border-0 pt-1 pb-1'>Filter Price</button>
+                                    <button className='buton-filter ps-2 pe-2 mt-3 border-0 pt-1 pb-1 '>Filter Price</button>
                                 </div>
                             </form>
                             <h5>Category</h5>
@@ -136,8 +136,8 @@ const Home = () => {
                                     <div className='col-12 col-sm-6 col-lg-4 mb-3' key={e.title}>
 
                                         <div className='card ' >
-                                            <img className='card-img-top p-4 pb-0 img-prod 1' onClick={() => { showDetails(e.id) }} src={e.productImgs?.[0]} alt="" />
-                                            {/* <img className='card-img-top p-4 pb-0 img-prod 2' src={e.productImgs?.[1]} alt="" /> */}
+                                            <img className='card-img-top p-4 pb-0 img-prod primary' onClick={() => { showDetails(e.id) }} src={e.productImgs?.[0]} alt="" />
+                                            {<img className='card-img-top p-4 pb-0 img-prod secundary' src={e.productImgs?.[1]} alt="" /> }
                                             <hr />
                                             <div className="card-body pt-0 pb-5">
                                                 <h6 className="card-title ">{e.title}</h6>
