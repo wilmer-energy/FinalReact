@@ -44,11 +44,10 @@ export const deleteCartThunk = (id) => (dispatch) => {
 
 export const checkoutThunk = () => (dispatch) => {
 
-    
+    dispatch(setIsLoading(true));
     return axios.post("https://ecommerce-api-react.herokuapp.com/api/v1/purchases",{street: "Green St. 1456",colony: "Southwest",zipCode: 12345,city: "USA",references: "Some references"},getConfig())
         .then(() =>{ 
-            dispatch(setIsLoading(true));
-            return dispatch(getCartThunk())})
+            return dispatch(setCar([]))})
         .finally(() => {dispatch(setIsLoading(false))});//dispatch(setIsLoading(false))
 }
 
