@@ -6,6 +6,7 @@ import Footer from '../Components/Footer';
 
 const ProductDetails = () => {
 
+   
     const [indexPhoto, setIndexPhoto] = useState(0)   
     const { id } = useParams()
 
@@ -22,6 +23,11 @@ const ProductDetails = () => {
     let ProductsFiltered = allProducts.filter((e) => {
         return e.category.name === category
     })
+
+    const addCart = (item) => {
+        //dispatch(addCartThunk(obj))
+       dispatch(addCartThunk(item)) 
+    }
 
     let ProductsHTML = [];
     ProductsFiltered.forEach((filterProduct) => {
@@ -81,10 +87,10 @@ const ProductDetails = () => {
                     </div>
 
                     <div className='Product-details'>
-                        <h2>{ProductSelect.title}</h2>
+                        <h2>{ProductSelect?.title}</h2>
 
                         <div className='Product-Descripcion'>
-                            {ProductSelect.description}
+                            {ProductSelect?.description}
                         </div>
 
                         <div className='ProducOptions'>
@@ -93,10 +99,10 @@ const ProductDetails = () => {
                                     <span className='label'>Price </span>
                                 </div>
                                 <span className='amount'>
-                                    <b>$ {ProductSelect.price}</b>
+                                    <b>$ {ProductSelect?.price}</b>
                                 </span>
                             </div>
-                            <div className='quantity'>
+                            {/* <div className='quantity'>
                                 <div className='quantity-Label'>Quantity</div>
                                 <div className='quantity-counter'>
                                     <button disabled>
@@ -111,11 +117,11 @@ const ProductDetails = () => {
                                         </i>
                                     </button>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
 
-                        <button className='add-cart-button'>
-                            Add to shop card <i className="fa-solid fa-cart-plus"></i>
+                        <button className='add-cart-button' onClick={()=>{addCart({id:e.id,quantity: 1})}}>
+                            Add to shop card <i className="fa-solid fa-cart-plus" ></i>
                         </button>
 
                     </div>

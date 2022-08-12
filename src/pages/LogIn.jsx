@@ -29,9 +29,6 @@ const LogIn = () => {
         <div className='LoginContainer'>
 
             <Header />
-
-
-
             <div className='Login'>
 
                 <Form onSubmit={handleSubmit(submit)}>

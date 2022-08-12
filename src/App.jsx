@@ -5,7 +5,11 @@ import './styles/home.css'
 import './styles/Login.css'
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import { Home, LogIn, ProductDetails, Purchases, ProtectedRoutes } from './pages/index'
+<<<<<<< HEAD
 import Footer from './Components/Footer';
+=======
+
+>>>>>>> FabianBranch
 
 
 function App() {
@@ -20,7 +24,7 @@ function App() {
       <Route element={<ProtectedRoutes />}>
         <Route path='/purchases' element={<Purchases />} />
       </Route>
-      <Route path='/LogIn' element={<LogIn />} />
+      <Route path='/LogIn' element={<LogIn />} />      
     </Routes>
   </HashRouter>
   )
