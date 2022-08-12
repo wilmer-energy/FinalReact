@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { setIsLoading } from './isLoading.slice';
 import getConfig from '/src/utils/getConfig';
 
 export const cart = createSlice({
@@ -42,11 +43,12 @@ export const deleteCartThunk = (id) => (dispatch) => {
 }
 
 export const checkoutThunk = () => (dispatch) => {
-    
-    //dispatch(setIsLoading(true));
+
+    dispatch(setIsLoading(true));
     return axios.post("https://ecommerce-api-react.herokuapp.com/api/v1/purchases",{street: "Green St. 1456",colony: "Southwest",zipCode: 12345,city: "USA",references: "Some references"},getConfig())
-        //.then(() => dispatch(getCartThunk()))
-        .finally(() => {});//dispatch(setIsLoading(false)
+        .then(() =>{ 
+            return dispatch(setCar([]))})
+        .finally(() => {dispatch(setIsLoading(false))});//dispatch(setIsLoading(false))
 }
 
 export const { setCar } = cart.actions;

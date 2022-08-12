@@ -5,6 +5,7 @@ import './styles/home.css'
 import './styles/Login.css'
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import { Home, LogIn, ProductDetails, Purchases, ProtectedRoutes } from './pages/index'
+import Footer from './Components/Footer';
 
 
 

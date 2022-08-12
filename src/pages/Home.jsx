@@ -55,7 +55,6 @@ const Home = () => {
     }
 
     const filterByCategory = (index) => {
-
         let filtered = products.filter((e) => {
             return e.category.name === categories[index]
         })
@@ -63,6 +62,7 @@ const Home = () => {
 
     }
     const showDetails = (index) => {
+        window.scrollTo( 0,0 )
         navigate(`/product/${index}`)
     }
     //--------------Cart-----------
@@ -74,9 +74,9 @@ const Home = () => {
     return (
         <div className='home'>
 
-            <Header />
+            <Header filter={filterByCategory} />
             <Carousel />
-            <Category />
+            <Category filter={filterByCategory} />
 
 
 
@@ -139,22 +139,24 @@ const Home = () => {
                                     <div className='col-12 col-sm-6 col-lg-4 mb-3' key={e.title}>
 
                                         <div className='card ' >
-                                            <div className='cardimg'>
-                                                <img className='card-img-top p-4 pb-0 img-prod Primary' onClick={() => { showDetails(e.id) }} src={e.productImgs?.[0]} alt="" />
-                                                {/* <img className='card-img-top p-4 pb-0 img-prod Secundary' src={e.productImgs?.[1]} alt="" /> */}
-
+                                            <div className='img-h' onClick={() => { showDetails(e.id) }}>
+                                                <img className='card-img-top p-4 pb-0 img-prod pri' src={e.productImgs?.[0]} alt="" />
+                                                <img className='card-img-top p-4 pb-0 img-prod sec' src={e.productImgs?.[1]} alt="" />
                                             </div>
-
                                             <hr />
                                             <div className="card-body pt-0 pb-5">
                                                 <h6 className="card-title ">{e.title}</h6>
 
                                                 <div className='detail-prod'>
-                                                    <span className=''>Price: $ </span>
+                                                    <span className=''>Price: </span>
                                                     <span>{e.price}</span>
 
+
+
                                                 </div>
-                                                <button className='p-2 border-0 fs-4 buton-cart' onClick={() => { addCart({ id: e.id, quantity: 1 }) }}>
+                                                <button className='p-2 border-0 fs-4 buton-cart' onClick={() => {
+                                                    addCart({ id: e.id, quantity: 1 })
+                                                }}>
                                                     <i className="fa-solid fa-cart-plus"></i>
                                                 </button>
                                             </div>
@@ -164,12 +166,7 @@ const Home = () => {
                                 )
                             })}
 
-
-
-
-
                         </div>
-
 
                     </div>
                 </div>

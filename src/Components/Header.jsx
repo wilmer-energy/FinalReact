@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import ShoppingCart from './ShoppingCart';
 
 
-const Header = () => {
+const Header = ({filter}) => {
     const navigate = useNavigate()
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -32,7 +32,7 @@ const Header = () => {
                     <Form className="d-flex d-lg-none">
 
                         <Button variant="none" className='p-2' onClick={showLogIn}><i className="fa-regular fa-user fs-6"></i></Button>
-                        <Button variant="none" className='p-2'><i className="fa-solid fa-bag-shopping fs-6"></i></Button>
+                        <Button variant="none" className='p-2'onClick={showPurchases}><i className="fa-solid fa-bag-shopping fs-6"></i></Button>
                         <Button variant="none" onClick={handleShow}><i className="fa-solid fa-cart-shopping fs-5"></i></Button>
                     </Form>
                     <Navbar.Brand href="/">
@@ -44,9 +44,9 @@ const Header = () => {
 
                         <Nav className='gap-2 m-auto'>
 
-                            <Nav.Link href="#" className='fw-semibold text-center'>Smart TV</Nav.Link>
-                            <Nav.Link href="#" className='fw-semibold text-center'>Computers</Nav.Link>
-                            <Nav.Link href="#" className='fw-semibold text-center'>Smartphone</Nav.Link>
+                            <Nav.Link href="#" className='fw-semibold text-center' onClick={()=>{filter(0)}}>Smart TV</Nav.Link>
+                            <Nav.Link href="#" className='fw-semibold text-center' onClick={()=>{filter(1)}}>Computers</Nav.Link>
+                            <Nav.Link href="#" className='fw-semibold text-center'onClick={()=>{filter(2)}}>Smartphone</Nav.Link>
                            
                         </Nav>
                         <Form className="d-flex gap-0 gap-sm-2 d-none d-lg-flex">

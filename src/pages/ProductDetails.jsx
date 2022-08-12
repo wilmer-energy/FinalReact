@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux/es/exports';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux/es/exports';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
+import { addCartThunk } from '../store/slices/car.slice';
 
 const ProductDetails = () => {
+    const dispatch= useDispatch()
+    const navigate=useNavigate()
 
    
     const [indexPhoto, setIndexPhoto] = useState(0)   
-    const { id } = useParams()
+    let { id } = useParams()
+    
 
     let Products = useSelector(state => state.productsSlice)
         .filter((e) => {
@@ -34,9 +38,13 @@ const ProductDetails = () => {
 
         ProductsHTML.push(
             <div className='Productcard'>
-                <div className='ImgproductPreview' onClick={() => { setProductSelect(filterProduct) }}>
+                <div className='ImgproductPreview' onClick={() => { 
+                    setProductSelect(filterProduct) 
+                    navigate(`/product/${filterProduct.id}`)
+                    window.scrollTo( 0,0 )
+                }}>
                     <img className='Primary' src={filterProduct.productImgs[0]} alt="" />
-                    <img className='Secundary' src={filterProduct.productImgs[1]} alt="" />
+                    <img className='Secundary' src={filterProduct.productImgs[1]} alt=""/>
                 </div>
 
                 <div className='Inf-product-preview'>
@@ -53,7 +61,7 @@ const ProductDetails = () => {
                 </div>
 
                 <div className='ButtoCardPreview'>
-                    <button className='p-2 border-0 fs-4 buton-cart'>
+                    <button className='p-2 border-0 fs-4 buton-cart' onClick={()=>{addCart({id:filterProduct.id,quantity: 1})}}>
                         <i className="fa-solid fa-cart-plus"></i>
                     </button>
                 </div>
@@ -120,7 +128,7 @@ const ProductDetails = () => {
                             </div> */}
                         </div>
 
-                        <button className='add-cart-button' onClick={()=>{addCart({id:e.id,quantity: 1})}}>
+                        <button className='add-cart-button' onClick={()=>{addCart({id:id,quantity: 1})}}>
                             Add to shop card <i className="fa-solid fa-cart-plus" ></i>
                         </button>
 
