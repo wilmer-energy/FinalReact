@@ -136,8 +136,8 @@ const Home = () => {
                                     <div className='col-12 col-sm-6 col-lg-4 mb-3' key={e.title}>
 
                                         <div className='card ' >
-                                            <img className='card-img-top p-4 pb-0 img-prod primary' onClick={() => { showDetails(e.id) }} src={e.productImgs?.[0]} alt="" />
-                                            {<img className='card-img-top p-4 pb-0 img-prod secundary' src={e.productImgs?.[1]} alt="" /> }
+                                            <img className='card-img-top p-4 pb-0 img-prod Primary' onClick={() => { showDetails(e.id) }} src={e.productImgs?.[0]} alt="" />
+                                            {<img className='card-img-top p-4 pb-0 img-prod Secundary' src={e.productImgs?.[1]} alt="" /> }
                                             <hr />
                                             <div className="card-body pt-0 pb-5">
                                                 <h6 className="card-title ">{e.title}</h6>
@@ -145,8 +145,6 @@ const Home = () => {
                                                 <div className='detail-prod'>
                                                     <span className=''>Price: </span>
                                                     <span>{e.price}</span>
-
-
 
                                                 </div>
                                                 <button className='p-2 border-0 fs-4 buton-cart' onClick={()=>{addCart({id:e.id,quantity: 1})}}>
