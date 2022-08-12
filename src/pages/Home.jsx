@@ -12,11 +12,11 @@ import { addCartThunk, updateCartThunk } from '../store/slices/car.slice';
 
 const Home = () => {
 
-    
+
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const { register, handleSubmit } = useForm()
-    const categories=["Smart TV","Computers","Smartphones","Kitchen"]
+    const categories = ["Smart TV", "Computers", "Smartphones", "Kitchen"]
 
     useEffect(() => {
         dispatch(getProductsThunk(dispatch))
@@ -65,19 +65,19 @@ const Home = () => {
     const showDetails = (index) => {
         navigate(`/product/${index}`)
     }
-     //--------------Cart-----------
+    //--------------Cart-----------
     const addCart = (item) => {
         //dispatch(addCartThunk(obj))
-       dispatch(addCartThunk(item)) 
+        dispatch(addCartThunk(item))
     }
 
     return (
         <div className='home'>
-            
+
             <Header />
             <Carousel />
             <Category />
-          
+
 
 
             <div className='container'>
@@ -89,12 +89,12 @@ const Home = () => {
                             <form action="" className='mb-5' onSubmit={handleSubmit(filterByPrice)}>
                                 <label htmlFor="from" className='d-flex justify-content-between mb-2'>
                                     <span>From</span>
-                                    <input className='input-c' type="number" id='from' {...register("from")}/>
+                                    <input className='input-c' type="number" id='from' {...register("from")} />
 
                                 </label>
                                 <label htmlFor="to" className='d-flex justify-content-between'>
                                     <span>To</span>
-                                    <input className='input-c' type="number" id='to' {...register("to")}/>
+                                    <input className='input-c' type="number" id='to' {...register("to")} />
 
                                 </label>
                                 <div className='d-flex justify-content-end'>
@@ -103,12 +103,12 @@ const Home = () => {
                             </form>
                             <h5>Category</h5>
                             <hr />
-                            
-                            <button className='buton-filter ps-2 pe-2 mt-3 border-0 pt-1 pb-1'onClick={()=>{filterByCategory(0)}}>Smart TV</button><br />
-                            <button className='buton-filter ps-2 pe-2 mt-3 border-0 pt-1 pb-1'onClick={()=>{filterByCategory(2)}}>Smartphone</button><br />
-                            <button className='buton-filter ps-2 pe-2 mt-3 border-0 pt-1 pb-1'onClick={()=>{filterByCategory(1)}}>Computer</button><br />
 
-                            
+                            <button className='buton-filter ps-2 pe-2 mt-3 border-0 pt-1 pb-1' onClick={() => { filterByCategory(0) }}>Smart TV</button><br />
+                            <button className='buton-filter ps-2 pe-2 mt-3 border-0 pt-1 pb-1' onClick={() => { filterByCategory(2) }}>Smartphone</button><br />
+                            <button className='buton-filter ps-2 pe-2 mt-3 border-0 pt-1 pb-1' onClick={() => { filterByCategory(1) }}>Computer</button><br />
+
+
 
                         </div>
                     </div>
@@ -139,18 +139,22 @@ const Home = () => {
                                     <div className='col-12 col-sm-6 col-lg-4 mb-3' key={e.title}>
 
                                         <div className='card ' >
-                                            <img className='card-img-top p-4 pb-0 img-prod Primary' onClick={() => { showDetails(e.id) }} src={e.productImgs?.[0]} alt="" />
-                                            {<img className='card-img-top p-4 pb-0 img-prod Secundary' src={e.productImgs?.[1]} alt="" /> }
+                                            <div className='cardimg'>
+                                                <img className='card-img-top p-4 pb-0 img-prod Primary' onClick={() => { showDetails(e.id) }} src={e.productImgs?.[0]} alt="" />
+                                                {/* <img className='card-img-top p-4 pb-0 img-prod Secundary' src={e.productImgs?.[1]} alt="" /> */}
+
+                                            </div>
+
                                             <hr />
                                             <div className="card-body pt-0 pb-5">
                                                 <h6 className="card-title ">{e.title}</h6>
 
                                                 <div className='detail-prod'>
-                                                    <span className=''>Price: </span>
+                                                    <span className=''>Price: $ </span>
                                                     <span>{e.price}</span>
 
                                                 </div>
-                                                <button className='p-2 border-0 fs-4 buton-cart' onClick={()=>{addCart({id:e.id,quantity: 1})}}>
+                                                <button className='p-2 border-0 fs-4 buton-cart' onClick={() => { addCart({ id: e.id, quantity: 1 }) }}>
                                                     <i className="fa-solid fa-cart-plus"></i>
                                                 </button>
                                             </div>
