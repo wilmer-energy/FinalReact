@@ -26,8 +26,12 @@ const ShoppingCart = ({ show, handleClose }) => {
     let substract = (itemd) => {
         dispatch(updateCartThunk(itemd))
     }
+    const [p,setP]=useState(false)
     const checkout = () => {
         dispatch(checkoutThunk())
+        setP(true)
+        window.alert("Thank you for your purchase")
+        
     }
     console.log(itemsInCart)
     let totalPrice = 0

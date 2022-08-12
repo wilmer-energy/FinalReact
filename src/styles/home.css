@@ -151,3 +151,31 @@
     }
 
 }
+
+.img-h {
+    position: relative;
+    height: 230px;
+}
+
+.img-h img {
+    
+    position: absolute;
+}
+
+.img-h .sec {
+     visibility: hidden; 
+    opacity: 0;
+    
+    /* position: absolute;  */
+    transition: all 3s ease;
+}
+
+.img-h:hover .pri {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.img-h:hover .sec {
+    opacity: 1;
+    visibility: visible;
+}
