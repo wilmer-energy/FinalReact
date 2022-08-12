@@ -78,7 +78,7 @@ const Home = () => {
             {/* <header>e-commerce</header> */}
           
                 
-           
+            <Header />
 
             <Carousel />
             <Category filterByCategory={filterByCategory}/>
@@ -144,8 +144,11 @@ const Home = () => {
                                 return (
                                     <div className='col-12 col-sm-6 col-lg-4 mb-3' key={e.title}>
 
-                                        <div className='card ' onClick={() => { showDetails(e.id) }}>
-                                            <img className='card-img-top p-4 pb-0 img-prod' src={e.productImgs?.[0]} alt="" />
+                                        <div className='card '>
+                                            <div className='img-h' onClick={() => { showDetails(e.id) }}>
+                                            <img className='card-img-top p-4 pb-0 img-prod pri' src={e.productImgs?.[0]} alt="" />
+                                            <img className='card-img-top p-4 pb-0 img-prod sec' src={e.productImgs?.[1]} alt="" />
+                                            </div>
                                             <hr />
                                             <div className="card-body pt-0 pb-5">
                                                 <h6 className="card-title ">{e.title}</h6>
@@ -157,7 +160,9 @@ const Home = () => {
 
 
                                                 </div>
-                                                <button className='p-2 border-0 fs-4 buton-cart'>
+                                                <button className='p-2 border-0 fs-4 buton-cart' onClick={()=>{addCart({id:e.id,quantity: 1})}
+                                            
+                                            }>
                                                     <i className="fa-solid fa-cart-plus"></i>
                                                 </button>
                                             </div>

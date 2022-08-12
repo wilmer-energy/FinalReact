@@ -16,7 +16,7 @@ function App() {
 
   return (
     <HashRouter>
-      <Header />
+      
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/product/:id' element={<ProductDetails />} />

@@ -3,13 +3,14 @@ import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux/es/exports';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
-
+import { addCartThunk } from '../store/slices/car.slice';
+import { useDispatch } from 'react-redux/es/hooks/useDispatch';
 const ProductDetails = () => {
 
 
     const [indexPhoto, setIndexPhoto] = useState(0)   
     const { id } = useParams()
-
+    const dispatch = useDispatch()
     let Products = useSelector(state => state.productsSlice)
         .filter((e) => {
             return parseInt(e.id) === parseInt(id)
@@ -24,6 +25,9 @@ const ProductDetails = () => {
         return e.category.name === category
     })
 
+
+    
+    
     let ProductsHTML = [];
     ProductsFiltered.forEach((filterProduct) => {
 
@@ -56,6 +60,10 @@ const ProductDetails = () => {
         )
     })
 
+
+    const addCart = (obj) => {
+        dispatch(addCartThunk(obj))
+    }
     return (
         <div className='Produc-detail-Container'>
 
@@ -98,7 +106,7 @@ const ProductDetails = () => {
                                     <b>$ {ProductSelect.price}</b>
                                 </span>
                             </div>
-                            <div className='quantity'>
+                            {/* <div className='quantity'>
                                 <div className='quantity-Label'>Quantity</div>
                                 <div className='quantity-counter'>
                                     <button disabled>
@@ -113,10 +121,10 @@ const ProductDetails = () => {
                                         </i>
                                     </button>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
 
-                        <button className='add-cart-button'>
+                        <button className='add-cart-button' onClick={(e)=>{addCart({id:e.id,quantity: 1})}} >
                             Add to shop card <i className="fa-solid fa-cart-plus"></i>
                         </button>
 

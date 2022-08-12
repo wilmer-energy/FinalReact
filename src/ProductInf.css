@@ -3,6 +3,7 @@
     src: url("../Fuente/WorkSans-Regular.ttf");
 }
 
+
 html {
     font-family: "WorSans";
 }
@@ -223,6 +224,7 @@ html {
     visibility: hidden;
     opacity: 0;
 }
+
 
 .ImgproductPreview:hover .Primary {
     visibility: hidden;
